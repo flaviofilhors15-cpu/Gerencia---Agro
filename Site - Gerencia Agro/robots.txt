@@ -1,0 +1,6 @@
+# PulverAgro Brasil - Diretivas para Rastreadores (Googlebot / Bingbot)
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://pulveragro.com.br/sitemap.xml
