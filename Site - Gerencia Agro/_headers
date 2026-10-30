@@ -5,11 +5,10 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Permissions-Policy: geolocation=(self), camera=(), microphone=()
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-cache, no-store, must-revalidate, max-age=0
 
-# Cache imutável para fontes e bibliotecas estáticas se houver
-/*.js
-  Cache-Control: public, max-age=86400
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate, max-age=0
 
-/*.css
-  Cache-Control: public, max-age=86400
+/
+  Cache-Control: no-cache, no-store, must-revalidate, max-age=0
