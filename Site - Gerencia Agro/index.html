@@ -126,6 +126,20 @@
     button, a, input, select {
       touch-action: manipulation;
     }
+  
+    /* Ocultar badge, drawer e propaganda do Netlify injetada */
+    netlify-drawer,
+    [data-netlify-deploy-id],
+    iframe[src*="netlify"],
+    .netlify-badge,
+    #netlify-badge,
+    div[class*="netlify-feedback"],
+    a[href*="netlify.com"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
   </style>
   <title>PulverAgro Brasil | Tecnologia Aeroagrícola & Gestão de Precisão</title>
   
@@ -695,7 +709,7 @@
                     <div class="flex items-center gap-1.5 text-emerald-800 text-xs font-black uppercase">
                       <i data-lucide="crosshair" class="w-4 h-4 text-emerald-600"></i> Hectares Protegidos
                     </div>
-                    <div class="text-2xl font-black text-slate-900 font-mono">+48.650 <span class="text-xs font-bold text-emerald-700">ha</span></div>
+                    <div class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight flex items-baseline gap-1.5 my-0.5">+24.650 <span class="text-xs font-extrabold text-emerald-700">ha</span></div>
                     <p class="text-[11px] text-slate-600 font-medium">Triângulo Mineiro e Oeste Baiano</p>
                   </div>
 
@@ -703,7 +717,7 @@
                     <div class="flex items-center gap-1.5 text-amber-800 text-xs font-black uppercase">
                       <i data-lucide="shield-check" class="w-4 h-4 text-amber-600"></i> Grãos Salvos
                     </div>
-                    <div class="text-2xl font-black text-slate-900 font-mono">R$ 5,8 <span class="text-xs font-bold text-amber-700">Milhões</span></div>
+                    <div class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight flex items-baseline gap-1.5 my-0.5">R$ 3,4 <span class="text-xs font-extrabold text-amber-700">Milhões</span></div>
                     <p class="text-[11px] text-slate-600 font-medium">Zero amassamento no rodado</p>
                   </div>
 
@@ -711,7 +725,7 @@
                     <div class="flex items-center gap-1.5 text-sky-800 text-xs font-black uppercase">
                       <i data-lucide="droplets" class="w-4 h-4 text-sky-600"></i> Água Preservada
                     </div>
-                    <div class="text-2xl font-black text-slate-900 font-mono">92% <span class="text-xs font-bold text-sky-700">Econ.</span></div>
+                    <div class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight flex items-baseline gap-1.5 my-0.5">92% <span class="text-xs font-extrabold text-sky-700">Econ.</span></div>
                     <p class="text-[11px] text-slate-600 font-medium">Tecnologia UBV centrífuga T50</p>
                   </div>
                 </div>
@@ -789,19 +803,19 @@
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <div class="brasil-card rounded-2xl p-5 border-l-4 border-l-yellow-400 space-y-2 shadow-xs">
               <span class="text-xs uppercase font-black text-amber-700 block">Produtividade Salva</span>
-              <div class="text-3xl sm:text-4xl font-black text-slate-900 font-mono">+3.8 <span class="text-base font-bold text-amber-800">sc/ha</span></div>
+              <div class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight flex items-baseline gap-1.5">+3.8 <span class="text-base font-bold text-amber-800">sc/ha</span></div>
               <p class="text-slate-600 text-xs">Elimine a perda de 2% a 4% da safra provocada pelo rastro de rodados de tratores terrestres.</p>
             </div>
 
             <div class="brasil-card rounded-2xl p-5 border-l-4 border-l-emerald-500 space-y-2 shadow-xs">
               <span class="text-xs uppercase font-black text-emerald-700 block">Precisão Centimétrica RTK</span>
-              <div class="text-3xl sm:text-4xl font-black text-slate-900 font-mono">100% <span class="text-base font-bold text-emerald-700">Sem Falhas</span></div>
+              <div class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight flex items-baseline gap-1.5">100% <span class="text-base font-bold text-emerald-700">Sem Falhas</span></div>
               <p class="text-slate-600 text-xs">Sem faixas duplicadas ou áreas desprotegidas. Navegação de satélite milimétrica.</p>
             </div>
 
             <div class="brasil-card rounded-2xl p-5 border-l-4 border-l-sky-400 space-y-2 shadow-xs">
               <span class="text-xs uppercase font-black text-sky-700 block">Economia de Insumos</span>
-              <div class="text-3xl sm:text-4xl font-black text-slate-900 font-mono">-90% <span class="text-base font-bold text-sky-800">Água</span></div>
+              <div class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight flex items-baseline gap-1.5">-90% <span class="text-base font-bold text-sky-800">Água</span></div>
               <p class="text-slate-600 text-xs">Tecnologia UBV: gotas centrífugas com forte penetração no dossel vegetal da cultura.</p>
             </div>
           </div>
@@ -1411,8 +1425,8 @@
             </p>
           </div>
 
-          <!-- Grid dos 5 Serviços -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Grid dos 4 Serviços -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             <!-- 1. Pulverização UBV -->
             <div class="brasil-card rounded-3xl p-6 border-l-4 border-l-emerald-500 space-y-4 flex flex-col justify-between group shadow-sm hover:shadow-lg transition-all">
@@ -1504,38 +1518,8 @@
               </button>
             </div>
 
-            <!-- 4. Mapeamento & NDVI Multiespectral -->
-            <div class="brasil-card rounded-3xl p-6 border-l-4 border-l-sky-500 space-y-4 flex flex-col justify-between group shadow-sm hover:shadow-lg transition-all">
-              <div class="space-y-3">
-                <!-- Imagem Ilustrativa / Fotográfica -->
-                <div class="relative h-44 w-full rounded-2xl overflow-hidden bg-slate-900 shadow-inner">
-                  <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=700&q=80" alt="Mapeamento e NDVI Multiespectral" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
-                  <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-sky-700/90 text-white font-black text-[10px] tracking-wide uppercase shadow-sm flex items-center gap-1.5 backdrop-blur-xs">
-                    <i data-lucide="map" class="w-3.5 h-3.5 text-sky-200"></i> Taxa Variável (VRA)
-                  </div>
-                  <div class="absolute bottom-2.5 left-3 text-white">
-                    <span class="text-xs font-bold text-sky-300">NDVI, NDRE e Biomassa</span>
-                  </div>
-                </div>
-
-                <h3 class="text-xl font-black text-slate-900">4. Mapeamento & NDVI Multiespectral</h3>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                  Voos com sensores multiespectrais para diagnóstico prévio de biomassa, estresse hídrico e deficiência nutricional. Geração de mapas em Shapefile para John Deere e Climate FieldView.
-                </p>
-                <ul class="space-y-1.5 text-[11px] text-slate-600">
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-700 shrink-0"></i> Resolução ultra-alta (GSD &lt; 2 cm/pixel)</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-700 shrink-0"></i> Índices NDVI, NDRE e biomassa vegetal</li>
-                  <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-700 shrink-0"></i> Prescrição em taxa variável (VRA) pronta</li>
-                </ul>
-              </div>
-              <button onclick="selectServiceForQuote('Mapeamento NDVI Multiespectral', 110)" class="w-full py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-black text-xs flex items-center justify-center gap-2 transition-transform hover:scale-102 shadow-md cursor-pointer">
-                <i data-lucide="calculator" class="w-4 h-4 text-emerald-200"></i> Simular Cotação (R$ 110/ha)
-              </button>
-            </div>
-
-            <!-- 5. Monitoramento & Catação de Pragas (Spot Spraying) -->
-            <div class="brasil-card rounded-3xl p-6 border-l-4 border-l-amber-500 space-y-4 flex flex-col justify-between group shadow-sm hover:shadow-lg transition-all md:col-span-2 lg:col-span-2">
+            <!-- 4. Monitoramento & Catação de Pragas (Spot Spraying) -->
+            <div class="brasil-card rounded-3xl p-6 border-l-4 border-l-amber-500 space-y-4 flex flex-col justify-between group shadow-sm hover:shadow-lg transition-all">
               <div class="space-y-3">
                 <!-- Imagem Ilustrativa / Fotográfica -->
                 <div class="relative h-44 w-full rounded-2xl overflow-hidden bg-slate-900 shadow-inner">
@@ -1549,7 +1533,7 @@
                   </div>
                 </div>
 
-                <h3 class="text-xl font-black text-slate-900">5. Monitoramento & Catação Cirúrgica de Pragas (Spot Spraying)</h3>
+                <h3 class="text-xl font-black text-slate-900">4. Monitoramento & Catação Cirúrgica de Pragas (Spot Spraying)</h3>
                 <p class="text-xs text-slate-600 leading-relaxed">
                   Identificação precisa de reboleiras de lagartas, percevejos, ferrugem ou ervas daninhas resistentes (buva e capim-amargoso). O drone voa e descarrega a calda exclusivamente nas coordenadas atingidas, sem precisar molhar o talhão inteiro.
                 </p>
@@ -2697,329 +2681,40 @@
         <!-- ====================================================== -->
         <!-- CATEGORIA COMERCIAL 4: SIMULADOR & UPLOAD KML (IDEIA 2) -->
         <!-- ====================================================== -->
-        <div id="cat-comercial-cotacao" class="category-view hidden space-y-8">
+        <div id="cat-comercial-cotacao" class="category-view hidden py-4 max-w-3xl mx-auto">
           
-          <div class="brasil-card rounded-3xl p-8 space-y-6  border border-slate-200/90">
-            <div class="text-left space-y-2">
-              <span class="text-xs font-black text-amber-700 uppercase tracking-widest block">Simulador Interativo 2026</span>
-              <h2 class="text-3xl sm:text-4xl font-black text-slate-900">Calcule o Investimento & Faça Upload do Talhão KML</h2>
-              <p class="text-slate-600 text-xs sm:text-sm">
-                Arraste a barra para simular rapidamente ou envie o arquivo KML do seu talhão para cálculo milimétrico:
-              </p>
+          <!-- Card Exclusivo da Imagem 2: Proposta Oficial da Engenharia -->
+          <div class="bg-white p-6 sm:p-10 rounded-3xl border-2 border-emerald-500/40 shadow-xl space-y-6 text-left">
+            <div class="space-y-2">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-black uppercase tracking-wider">
+                <i data-lucide="file-text" class="w-4 h-4 text-emerald-700"></i> PROPOSTA OFICIAL TIMBRADA
+              </div>
+              <h2 class="font-black text-slate-900 text-2xl sm:text-3xl leading-tight">Receba uma Proposta Oficial da Engenharia</h2>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium">Receba a proposta formal com carimbo de ART, plano de voo e dosagem direta no seu WhatsApp em minutos:</p>
             </div>
-
-            <!-- ÁREA DO UPLOAD KML / KMZ (IDEIA 2) -->
-            <div class="p-6 rounded-2xl bg-slate-50 border-2 border-dashed border-sky-400/50 space-y-3 text-center">
-              <div class="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-200/80 text-sky-800 flex items-center justify-center mx-auto">
-                <i data-lucide="upload-cloud" class="w-6 h-6"></i>
+            
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div>
+                <label class="block text-slate-700 mb-1.5 font-bold">Seu Nome / Nome da Propriedade:</label>
+                <input type="text" id="quoteDirectName" placeholder="Ex: Rogério Matos (Fazenda Santa Luzia)" class="w-full bg-slate-50 border-2 border-slate-300 rounded-2xl p-4 text-slate-900 font-bold focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-200 outline-none transition-all shadow-2xs">
               </div>
-              <h4 class="text-base font-black text-slate-900">Envie seu Arquivo de Mapa (KML / KMZ / Shapefile)</h4>
-              <p class="text-xs text-slate-600 max-w-lg mx-auto">
-                Arraste o mapa do seu talhão exportado do Google Earth, John Deere Operations Center ou Climate FieldView para cálculo automático de rota:
-              </p>
-              
-              <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-                <label class="px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs cursor-pointer flex items-center gap-2">
-                  <i data-lucide="file-up" class="w-4 h-4"></i> Selecionar Arquivo do Computador
-                  <input type="file" accept=".kml,.kmz,.json,.geojson" onchange="handleKmlUpload(event)" class="hidden">
-                </label>
-                
-                <button onclick="loadSampleKml()" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-700 text-slate-600 border border-slate-200 font-bold text-xs flex items-center gap-1.5">
-                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-700"></i> Testar com Talhão Exemplo (100 ha)
-                </button>
-              </div>
-
-              <div id="kmlFeedback" class="hidden p-3.5 rounded-xl bg-emerald-50 border-2 border-emerald-400 text-xs text-emerald-950 font-black font-mono">
-                Arquivo KML reconhecido: Talhão 04 Pivô • 100.0 hectares detectados!
-              </div>
-            </div>
-
-            <!-- Grid do Simulador Manual -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
-              <div class="lg:col-span-6 space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-xs font-bold uppercase text-slate-600 mb-2">Selecione o Tipo de Aplicação:</label>
-                  <select id="simServiceSelect" onchange="recalculateQuote()" class="w-full bg-white border border-slate-300 rounded-xl py-3 px-3.5 text-slate-900 text-xs sm:text-sm font-bold focus:ring-2 focus:ring-emerald-500 shadow-2xs cursor-pointer truncate">
-                    <option value="110" data-name="Pulverização Agrícola UBV">Pulverização Agrícola UBV • R$ 110/ha</option>
-                    <option value="110" data-name="Semeadura de Pastagens">Semeadura de Pastagens • R$ 110/ha</option>
-                    <option value="110" data-name="Controle Biológico">Controle Biológico • R$ 110/ha</option>
-                    <option value="110" data-name="Dessecação Pré-Colheita">Dessecação Pré-Colheita • R$ 110/ha</option>
-                  </select>
+                  <label class="block text-slate-700 mb-1.5 font-bold">WhatsApp com DDD:</label>
+                  <input type="text" id="quoteDirectPhone" placeholder="(34) 99872-4510" class="w-full bg-slate-50 border-2 border-slate-300 rounded-2xl p-4 text-slate-900 font-bold focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-200 outline-none transition-all shadow-2xs">
                 </div>
-
-                <div class="space-y-3 bg-slate-50 p-5 rounded-2xl border border-slate-200">
-                  <div class="flex items-center justify-between gap-2">
-                    <span class="text-xs font-black text-slate-700 uppercase">Tamanho da Área a Aplicar:</span>
-                    <div class="flex items-center gap-1.5 bg-white border-2 border-emerald-500 rounded-xl px-2.5 py-1 shadow-xs">
-                      <input type="number" id="simAreaInput" min="1" max="50000" step="1" value="130" oninput="syncSimAreaFromInput(this.value)" class="w-16 sm:w-20 bg-transparent border-0 border-none p-0 text-lg sm:text-xl font-black text-slate-900 font-sans text-right outline-none focus:outline-none focus:ring-0 shadow-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
-                      <span class="text-xs sm:text-sm font-black text-emerald-700 select-none">ha</span>
-                    </div>
-                  </div>
-                  <input type="range" min="10" max="3000" step="1" value="130" id="simAreaSlider" oninput="syncSimAreaFromSlider(this.value)" class="w-full h-3.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
-                  <div class="flex flex-wrap gap-1.5 pt-1">
-                    <button type="button" onclick="setSimArea(50)" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-700 text-[11px] font-bold border border-slate-300 cursor-pointer">50 ha</button>
-                    <button type="button" onclick="setSimArea(100)" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-700 text-[11px] font-bold border border-slate-300 cursor-pointer">100 ha</button>
-                    <button type="button" onclick="setSimArea(130)" class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-950 text-[11px] font-black border border-emerald-400 cursor-pointer shadow-xs">130 ha</button>
-                    <button type="button" onclick="setSimArea(250)" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-700 text-[11px] font-bold border border-slate-300 cursor-pointer">250 ha</button>
-                    <button type="button" onclick="setSimArea(500)" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-700 text-[11px] font-bold border border-slate-300 cursor-pointer">500 ha</button>
-                    <button type="button" onclick="setSimArea(1000)" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-700 text-[11px] font-bold border border-slate-300 cursor-pointer">1.000 ha</button>
-                  </div>
+                <div>
+                  <label class="block text-slate-700 mb-1.5 font-bold">Município / Estado:</label>
+                  <input type="text" id="quoteDirectCity" placeholder="Ex: Tupaciguara/MG, LEM/BA, Rio Verde/GO" class="w-full bg-slate-50 border-2 border-slate-300 rounded-2xl p-4 text-slate-900 font-bold focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-200 outline-none transition-all shadow-2xs">
                 </div>
-
-                <!-- Estimador de Deslocamento e Logística (FASE 1) -->
-                <div class="p-4 sm:p-5 bg-emerald-50/50 rounded-2xl border border-emerald-300/80 space-y-3">
-                  <div class="flex justify-between items-center">
-                    <span class="text-xs font-black text-emerald-950 uppercase flex items-center gap-1.5">
-                      <i data-lucide="truck" class="w-4 h-4 text-emerald-700"></i> Distância da Propriedade até a Base PulverAgro:
-                    </span>
-                    <span class="text-xs font-black text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md border border-emerald-300 font-sans" id="simDistLabel">40 km</span>
-                  </div>
-                  <input type="range" min="10" max="300" step="10" value="40" id="simDistSlider" oninput="recalculateQuote()" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-2 border-t border-emerald-200/80">
-                    <div class="flex items-center gap-2 text-emerald-950">
-                      <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                      <span><strong>Mobilização 4x4:</strong> Inclusa sem taxa de frete</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-slate-800">
-                      <i data-lucide="clock" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                      <span><strong>Tempo de Deslocamento:</strong> <span class="font-bold text-emerald-800 font-sans" id="simArrivalEst">em até 45 min</span></span>
-                    </div>
-                  </div>
-                </div>
-
-<!-- BANNER & BOTÃO PARA GERAR PROPOSTA COMERCIAL OFICIAL (PDF/A4) -->
-                <div class="p-5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-emerald-500/20 border-2 border-amber-400/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-left">
-                  <div class="space-y-1">
-                    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-black uppercase tracking-wider">
-                      <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-700"></i> Proposta Formal Pré-Safra
-                    </span>
-                    <h4 class="text-lg font-black text-slate-900">Precisa de Proposta Formal para Apresentar à Fazenda ou Diretoria?</h4>
-                    <p class="text-xs text-slate-600 max-w-xl">
-                      Gere instantaneamente o documento oficial timbrado da PulverAgro com dados do seu talhão, valor de R$ 110,00/ha, cláusulas de seguro RETA e garantia de janela operacional.
-                    </p>
-                  </div>
-                  <button onclick="openPropostaComercialModal()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-black text-xs flex items-center gap-2 shadow-lg shadow-yellow-500/20 shrink-0 cursor-pointer transition-all hover:scale-102">
-                    <i data-lucide="printer" class="w-4 h-4 text-slate-950"></i> Gerar Proposta Comercial (PDF)
-                  </button>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-[#04241a] via-[#053222] to-[#021b13] border-2 border-emerald-500/40 shadow-xl shadow-emerald-950/20 flex flex-col gap-5 relative overflow-hidden">
-                  <!-- Efeito luminoso suave no fundo -->
-                  <div class="absolute -right-8 -bottom-8 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
-
-                  <!-- Condição & Forma de Pagamento (Melhoria 3 / 4.1) -->
-                  <div class="relative z-10 space-y-1.5 border-b border-emerald-800/80 pb-4">
-                    <label class="block text-[11px] font-black uppercase text-emerald-300 flex items-center gap-1.5">
-                      <i data-lucide="wallet" class="w-3.5 h-3.5 text-emerald-400"></i> Condição & Forma de Pagamento:
-                    </label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <button type="button" onclick="setPaymentMode('avista')" id="btnPayAvista" class="p-2.5 rounded-xl bg-emerald-800 text-white border border-emerald-400 font-black text-xs flex items-center justify-between cursor-pointer transition-all shadow-xs">
-                        <span>À Vista (PIX / TED)</span>
-                        <span class="px-1.5 py-0.5 rounded text-[9px] bg-emerald-400 text-emerald-950 font-black">3% DESC.</span>
-                      </button>
-                      <button type="button" onclick="setPaymentMode('barter')" id="btnPayBarter" class="p-2.5 rounded-xl bg-slate-900/80 text-slate-300 border border-slate-700 font-bold text-xs flex items-center justify-between cursor-pointer transition-all hover:bg-slate-800">
-                        <span>Safra Futura (Barter)</span>
-                        <span class="px-1.5 py-0.5 rounded text-[9px] bg-yellow-400 text-yellow-950 font-black" id="barterSacasBadge">~107 sc</span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-                    <div class="space-y-1">
-                      <span class="text-xs uppercase tracking-wider font-extrabold text-emerald-400 flex items-center gap-1.5">
-                        <i data-lucide="calculator" class="w-3.5 h-3.5 text-emerald-400"></i> INVESTIMENTO TOTAL ESTIMADO:
-                      </span>
-                      <div class="text-3xl sm:text-4xl font-black text-white font-sans tracking-tight drop-shadow-sm flex items-baseline gap-1" id="simTotalPrice">R$ 13.871,00</div>
-                      <span class="text-xs text-emerald-200/90 font-medium block font-sans" id="simPerHa">R$ 106,70 por hectare (com 3% desconto à vista)</span>
-                    </div>
-
-                    <button onclick="sendSimulatedQuoteWhatsApp()" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 hover:from-yellow-300 hover:to-amber-300 text-slate-950 font-black text-xs sm:text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-yellow-400/25 transition-all hover:scale-102 cursor-pointer border border-yellow-300">
-                      <i data-lucide="message-circle" class="w-4.5 h-4.5"></i> Fechar no WhatsApp
-                    </button>
-                  </div>
-
-                  <!-- Termo de Aceite & Condições Gerais (Melhoria 1.1) -->
-                  <label class="relative z-10 flex items-start gap-2 pt-1 cursor-pointer text-left select-none border-t border-emerald-900/60">
-                    <input type="checkbox" id="quoteTermsAccepted" checked class="mt-0.5 w-4 h-4 rounded border-emerald-500 text-emerald-600 focus:ring-emerald-500 accent-emerald-500">
-                    <span class="text-[11px] text-slate-300 leading-tight">
-                      Declaro concordância com as <strong>Condições Gerais de Operação Aeroagrícola</strong> (Seguro RETA ANAC ativo, laudo com ART e prescrição de calda conforme recomendação técnica).
-                    </span>
-                  </label>
-                </div>
-
-                
-          <!-- BLOCO ESTRATÉGICO COMERCIAL: TRAVA DE SAFRA & RESERVA DE JANELA ANTECIPADA -->
-          <div class="rounded-3xl p-6 sm:p-8 border-2 border-emerald-500/60 shadow-2xl space-y-6 relative overflow-hidden bg-gradient-to-br from-[#04241a] via-[#053222] to-[#021b13] text-white">
-            <div class="absolute -right-12 -top-12 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 relative z-10">
-              <div class="space-y-2 max-w-2xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[11px] font-black uppercase tracking-wider">
-                  <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-emerald-400"></i> Proteção Contra Quebra de Safra
-                </div>
-                <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Trava de Safra 25/26: Garanta a Janela da Sua Fazenda</h3>
-                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Não dispute drone de última hora na chuva. Trave antecipadamente de <strong>300 a 5.000 hectares</strong> para fungicida ou dessecação e tenha a frota DJI T50 com equipe própria e gerador dedicada na sua fazenda.
-                </p>
-              </div>
-
-              <!-- Selos de Vantagem Comercial -->
-              <div class="grid grid-cols-2 gap-3 w-full lg:w-auto text-xs">
-                <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm space-y-1">
-                  <span class="text-amber-400 font-extrabold flex items-center gap-1.5"><i data-lucide="cloud-rain" class="w-4 h-4"></i> Garantia Anti-Chuva</span>
-                  <p class="text-[11px] text-slate-300">Choveu 100mm? O drone entra em 2h sem atolar o solo.</p>
-                </div>
-                <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm space-y-1">
-                  <span class="text-emerald-400 font-extrabold flex items-center gap-1.5"><i data-lucide="truck" class="w-4 h-4"></i> Frete Bonificado</span>
-                  <p class="text-[11px] text-slate-300">Raio de 60 km das bases (Tupaciguara e LEM) acima de 100 ha.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Formulário Rápido de Trava de Safra -->
-            <div class="pt-4 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 relative z-10">
-              <div>
-                <label class="block text-[11px] text-slate-400 uppercase font-bold mb-1">Seu Nome / Fazenda:</label>
-                <input type="text" id="lockFarmName" placeholder="Ex: Fazenda Progresso" class="w-full bg-white/10 border border-white/20 rounded-xl p-2.5 text-xs text-white placeholder-slate-400 focus:bg-white/20 focus:ring-2 focus:ring-emerald-400 outline-none">
               </div>
               <div>
-                <label class="block text-[11px] text-slate-400 uppercase font-bold mb-1">Área para Travar (Hectares):</label>
-                <input type="number" id="lockHectares" value="500" min="50" step="50" class="w-full bg-white/10 border border-white/20 rounded-xl p-2.5 text-xs text-white placeholder-slate-400 focus:bg-white/20 focus:ring-2 focus:ring-emerald-400 outline-none">
+                <label class="block text-slate-700 mb-1.5 font-bold">Cultura da Lavoura & Operação:</label>
+                <input type="text" id="quoteDirectCrop" placeholder="Ex: Soja R3, Milho Safrinha, Algodão, Pastagem..." class="w-full bg-slate-50 border-2 border-slate-300 rounded-2xl p-4 text-slate-900 font-bold focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-200 outline-none transition-all shadow-2xs">
               </div>
-              <div>
-                <label class="block text-[11px] text-slate-400 uppercase font-bold mb-1">Janela Crítica Prevista:</label>
-                <select id="lockWindowSelect" class="w-full bg-[#04241a] border border-white/20 rounded-xl p-2.5 text-xs text-white focus:ring-2 focus:ring-emerald-400 outline-none cursor-pointer">
-                  <option value="Novembro/2025 - Pré-Plantio & Inicial">Novembro — Pré-Plantio & Inicial</option>
-                  <option value="Dezembro/2025 - 1ª Aplicação Fungicida">Dezembro — 1ª Fungicida / Baixeiro</option>
-                  <option value="Janeiro/2026 - 2ª Fungicida & Inseticida" selected>Janeiro — 2ª Fungicida & Percevejo</option>
-                  <option value="Fevereiro/2026 - Dessecação Pré-Colheita">Fevereiro — Dessecação Pré-Colheita</option>
-                  <option value="Março/2026 - Safrinha & Pastagens">Março — Safrinha & Pastagens</option>
-                </select>
-              </div>
-              <div class="flex items-end">
-                <button onclick="submitHarvestLock()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-amber-400/20 transition-all hover:scale-102 cursor-pointer border border-yellow-300">
-                  <i data-lucide="lock" class="w-4 h-4"></i> Travar Janela no WhatsApp
-                </button>
-              </div>
-            </div>
-
-            <!-- Botão de Autoridade: Download Laudo Técnico Modelo -->
-            <div class="pt-3 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 border-t border-white/5">
-              <span>Laudo oficial com ART, Kestrel 3000 e relatório em alta resolução gerado a cada talhão.</span>
-              <button onclick="openDemoPdfReport('op-1')" class="mt-2 sm:mt-0 text-emerald-400 hover:text-emerald-300 font-bold underline flex items-center gap-1 cursor-pointer">
-                <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Ver Modelo do Laudo Técnico Oficial (PDF A4)
+              <button type="button" onclick="sendCustomQuoteWhatsApp()" class="w-full py-4.5 px-6 rounded-2xl bg-[#047857] hover:bg-[#065f46] text-white font-extrabold text-base flex items-center justify-center gap-3 shadow-lg shadow-emerald-900/20 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer">
+                <i data-lucide="send" class="w-5 h-5 text-emerald-200"></i> Enviar Solicitação para Nossos Engenheiros
               </button>
-            </div>
-          </div>
-
-
-          
-            <!-- SELO DE CONFORMIDADE TRIPLA (MAPA + ANAC SEGURO RETA + CAAR) -->
-            <div class="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-black shadow-xs shrink-0">
-                  <i data-lucide="shield-check" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <strong class="text-slate-900 block font-black text-xs sm:text-sm">Operação 100% Homologada & Segurada</strong>
-                  <span class="text-[11px] text-slate-500 font-medium">Conformidade total com a legislação aeroagrícola brasileira</span>
-                </div>
-              </div>
-              <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-900 text-[11px] font-bold border border-emerald-200/80">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Seguro RETA ANAC
-                </span>
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-900 text-[11px] font-bold border border-emerald-200/80">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> MAPA Portaria 298
-                </span>
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-900 text-[11px] font-bold border border-emerald-200/80">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Pilotos CAAR
-                </span>
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-900 text-[11px] font-bold border border-emerald-200/80">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> DECEA / SARPAS
-                </span>
-              </div>
-            </div>
-
-
-            <!-- Estrutura Operacional Dedicada Inclusa na Fazenda -->
-                <div class="p-5 bg-white rounded-2xl border-2 border-emerald-500/40 shadow-xs space-y-3.5 text-left text-xs">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-black uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
-                      <i data-lucide="cpu" class="w-4 h-4 text-emerald-700"></i> Estrutura Operacional Inclusa:
-                    </span>
-                    <span id="simScaleBadge" class="px-2.5 py-1 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-900 border border-emerald-300 font-sans">
-                      Equipe & Frota 100% Próprias
-                    </span>
-                  </div>
-
-                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-left">
-                      <div class="flex items-center gap-1.5 font-black text-slate-900 mb-0.5">
-                        <i data-lucide="user-check" class="w-4 h-4 text-emerald-600 shrink-0"></i> Pilotos CAAR MAPA
-                      </div>
-                      <p class="text-[11px] text-slate-600 leading-snug">Profissionais certificados com telemetria centimétrica em tempo real.</p>
-                    </div>
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-left">
-                      <div class="flex items-center gap-1.5 font-black text-slate-900 mb-0.5">
-                        <i data-lucide="zap" class="w-4 h-4 text-emerald-600 shrink-0"></i> Gerador & Baterias
-                      </div>
-                      <p class="text-[11px] text-slate-600 leading-snug">Autonomia total sem depender da rede elétrica da sua sede.</p>
-                    </div>
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-left">
-                      <div class="flex items-center gap-1.5 font-black text-slate-900 mb-0.5">
-                        <i data-lucide="file-check-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> ART & Laudo em PDF
-                      </div>
-                      <p class="text-[11px] text-slate-600 leading-snug">Anotação Técnica assinada por Engenheiro Agrônomo responsável.</p>
-                    </div>
-                  </div>
-
-                  <div class="pt-2 border-t border-slate-200 text-[11px] space-y-1">
-                    <div class="text-slate-700 font-medium">
-                      <strong class="text-emerald-800">Custo Total Transparente:</strong> Sem cobrança extra de equipe, diesel do gerador ou frete.
-                    </div>
-                    <div class="text-emerald-800 font-bold flex items-center gap-1" id="simScaleSavingsText">
-                      <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i> Rendimento operacional máximo com suporte contínuo de gerador e equipe dedicada.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Formulário para Receber Proposta Formal -->
-              <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border-2 border-emerald-500/40 shadow-sm space-y-4">
-                <div class="space-y-1">
-                  <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 text-[10px] font-black uppercase tracking-wider">
-                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-emerald-700"></i> Proposta Oficial Timbrada
-                  </div>
-                  <h3 class="font-black text-slate-900 text-lg">Receba uma Proposta Oficial da Engenharia</h3>
-                  <p class="text-xs text-slate-600">Receba a proposta formal com carimbo de ART, plano de voo e dosagem direta no seu WhatsApp em minutos:</p>
-                </div>
-                
-                <div class="space-y-3.5 text-xs">
-                  <div>
-                    <label class="block text-slate-700 mb-1 font-bold">Seu Nome / Nome da Propriedade:</label>
-                    <input type="text" id="quoteDirectName" placeholder="Ex: Rogério Matos (Fazenda Santa Luzia)" class="w-full bg-slate-50 border-2 border-slate-300 rounded-xl p-3.5 text-slate-900 font-bold focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-200 outline-none shadow-2xs">
-                  </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label class="block text-slate-700 mb-1 font-bold">WhatsApp com DDD:</label>
-                      <input type="text" id="quoteDirectPhone" placeholder="(34) 99872-4510" class="w-full bg-slate-50 border-2 border-slate-300 rounded-xl p-3.5 text-slate-900 font-bold focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-200 outline-none shadow-2xs">
-                    </div>
-                    <div>
-                      <label class="block text-slate-700 mb-1 font-bold">Município / Estado:</label>
-                      <input type="text" id="quoteDirectCity" placeholder="Ex: Tupaciguara/MG, LEM/BA, Rio Verde/GO" class="w-full bg-slate-50 border-2 border-slate-300 rounded-xl p-3.5 text-slate-900 font-bold focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-200 outline-none shadow-2xs">
-                    </div>
-                  </div>
-                  <div>
-                    <label class="block text-slate-700 mb-1 font-bold">Cultura da Lavoura & Operação:</label>
-                    <input type="text" id="quoteDirectCrop" placeholder="Ex: Soja R3, Milho Safrinha, Algodão, Pastagem..." class="w-full bg-slate-50 border-2 border-slate-300 rounded-xl p-3.5 text-slate-900 font-bold focus:border-emerald-600 focus:bg-white focus:ring-2 focus:ring-emerald-200 outline-none shadow-2xs">
-                  </div>
-                  <button type="button" onclick="sendCustomQuoteWhatsApp()" class="w-full py-4 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-black text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-950/20 hover:scale-102 transition-all cursor-pointer">
-                    <i data-lucide="send" class="w-4 h-4 text-emerald-200"></i> Enviar Solicitação para Nossos Engenheiros
-                  </button>
-                </div>
-              </div>
-
             </div>
           </div>
 
@@ -4846,6 +4541,63 @@
               </div>
             </div>
 
+            <!-- PAINEL EXECUTIVO: PONTO DE EQUILÍBRIO (BREAK-EVEN) & MARGEM DE SEGURANÇA (MELHORIA OPERACIONAL 4) -->
+            <div class="brasil-card rounded-3xl p-5 sm:p-7 border border-emerald-300/80 bg-gradient-to-br from-white via-emerald-50/20 to-teal-50/30 shadow-xs space-y-4 text-left">
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-emerald-100 pb-3">
+                <div>
+                  <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 text-[10px] font-black uppercase tracking-wider">
+                    <i data-lucide="scale" class="w-3.5 h-3.5 text-emerald-700"></i> Gestão Financeira Estratégica
+                  </div>
+                  <h4 class="text-xl font-black text-slate-900 mt-1">Ponto de Equilíbrio & Margem de Segurança</h4>
+                  <p class="text-xs text-slate-600">Volume mínimo de hectares necessários para cobrir 100% dos custos fixos mensais da empresa:</p>
+                </div>
+                <div class="text-right bg-white p-2.5 px-4 rounded-2xl border border-emerald-200 shadow-2xs">
+                  <span class="text-[9px] font-black text-slate-500 uppercase block">Meta de Equilíbrio Mensal</span>
+                  <span class="text-lg font-black text-emerald-800 font-mono">213 ha / mês</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 space-y-1">
+                  <span class="text-[10px] text-slate-500 font-bold uppercase block">1. Custos Fixos Mensais</span>
+                  <strong class="text-base font-black text-slate-900 font-mono">R$ 14.500,00</strong>
+                  <span class="text-[10px] text-slate-400 block">Seguro RETA, CREA, Contador, Base</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 space-y-1">
+                  <span class="text-[10px] text-slate-500 font-bold uppercase block">2. Margem de Contribuição</span>
+                  <strong class="text-base font-black text-emerald-700 font-mono">R$ 68,00 / ha</strong>
+                  <span class="text-[10px] text-slate-400 block">Receita (R$ 110) - Custos Diretos (R$ 42)</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-white border border-slate-200 space-y-1">
+                  <span class="text-[10px] text-slate-500 font-bold uppercase block">3. Hectares Voados na Safra</span>
+                  <strong class="text-base font-black text-slate-900 font-mono" id="kpiBreakEvenExecutado">9.150 ha</strong>
+                  <span class="text-[10px] text-emerald-600 font-bold block">✓ Ponto de Equilíbrio Superado</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-300 space-y-1">
+                  <span class="text-[10px] text-emerald-800 font-black uppercase block">4. Margem de Segurança</span>
+                  <strong class="text-base font-black text-emerald-900 font-mono">+ 8.298 ha</strong>
+                  <span class="text-[10px] text-emerald-700 font-semibold block">97,7% da safra em Lucro Líquido Puro</span>
+                </div>
+              </div>
+
+              <!-- Barra de Progresso Visual de Equilíbrio -->
+              <div class="space-y-1 pt-1">
+                <div class="flex justify-between text-[11px] font-bold">
+                  <span class="text-slate-600">Cobertura de Custos Fixos da Safra:</span>
+                  <span class="text-emerald-700 font-mono font-black">Meta Superada com Folga (100% no Lucro)</span>
+                </div>
+                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden flex">
+                  <div class="bg-amber-400 h-3" style="width: 2.3%" title="Custos Fixos Cobertos (213 ha)"></div>
+                  <div class="bg-emerald-600 h-3" style="width: 97.7%" title="Lucro Líquido Real (8.937 ha)"></div>
+                </div>
+                <div class="flex justify-between text-[9px] text-slate-400 font-mono">
+                  <span>0 ha (Início)</span>
+                  <span class="text-amber-700 font-bold">213 ha (Break-Even)</span>
+                  <span class="text-emerald-700 font-bold">9.150 ha (Safra Atual)</span>
+                </div>
+              </div>
+            </div>
+
             <!-- GRÁFICOS INTERATIVOS DA OPERAÇÃO REAL (CHART.JS) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
               <!-- Gráfico 1: Evolução Faturamento vs Custos vs Lucro (Gráfico em Linhas / Barras) -->
@@ -4970,6 +4722,53 @@
                   <div class="text-xl font-black text-slate-700 font-sans tracking-tight" id="dreValManutencao">- R$ 4,50</div>
                   <span class="text-[11px] text-slate-600 font-medium block" id="drePctManutencao">4,1% (Bicos, filtros, óleo)</span>
                 </div>
+              </div>
+            </div>
+
+            <!-- RELATÓRIO EXECUTIVO: CUSTOS OPERACIONAIS & RENTABILIDADE POR FAZENDA -->
+            <div class="brasil-card rounded-3xl overflow-hidden border border-slate-200 shadow-xs space-y-4 p-5 sm:p-6 text-left">
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-100 pb-3">
+                <div>
+                  <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 text-[10px] font-black uppercase tracking-wider">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 text-emerald-700"></i> Auditoria Individual de Clientes
+                  </div>
+                  <h4 class="text-lg sm:text-xl font-black text-slate-900 mt-1">Custos Operacionais & Rentabilidade por Fazenda</h4>
+                  <p class="text-xs text-slate-600">Detalhamento dos custos específicos de cada propriedade. As médias alimentam automaticamente o DRE acima:</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="exportFarmCostsCsv()" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-bold text-xs flex items-center gap-1.5 cursor-pointer transition-colors shadow-2xs">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Exportar CSV
+                  </button>
+                  <button type="button" onclick="openNewOsModal()" class="px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs flex items-center gap-1.5 cursor-pointer transition-all hover:scale-101 shadow-2xs">
+                    <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i> Nova Fazenda / O.S.
+                  </button>
+                </div>
+              </div>
+
+              <div class="overflow-x-auto rounded-2xl border border-slate-200">
+                <table class="w-full min-w-[900px] text-left text-xs border-collapse">
+                  <thead class="bg-slate-100 text-slate-800 font-black">
+                    <tr>
+                      <th class="p-3">Fazenda / Cliente</th>
+                      <th class="p-3 text-center">Área (ha)</th>
+                      <th class="p-3 text-right">Receita (R$)</th>
+                      <th class="p-3 text-right">Piloto (R$)</th>
+                      <th class="p-3 text-right">Bateria (R$)</th>
+                      <th class="p-3 text-right">Diesel (R$)</th>
+                      <th class="p-3 text-right">Manut. (R$)</th>
+                      <th class="p-3 text-right text-rose-700">Custo Total</th>
+                      <th class="p-3 text-right bg-emerald-100 text-emerald-950 font-black">Lucro Líquido</th>
+                      <th class="p-3 text-center">Margem</th>
+                      <th class="p-3 text-center">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 font-mono" id="tabelaCustosFazendaBody">
+                    <!-- Linhas renderizadas dinamicamente via JS -->
+                  </tbody>
+                  <tfoot class="bg-slate-100 font-bold text-slate-900 border-t-2 border-slate-300 font-mono" id="tabelaCustosFazendaFoot">
+                    <!-- Totais calculados dinamicamente via JS -->
+                  </tfoot>
+                </table>
               </div>
             </div>
 
@@ -5830,29 +5629,18 @@
         <p class="text-xs text-slate-600">Acesso exclusivo dos proprietários: financeiro, custos, frota de drones e equipe.</p>
       </div>
 
-      <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-400 text-xs text-slate-700 space-y-2">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="text-[10px] uppercase font-black text-emerald-800 block">Acesso Rápido dos Gestores:</span>
-            <span class="text-xs font-bold text-slate-900">Senha padrão: <code class="bg-white px-2 py-0.5 rounded-lg border border-emerald-300 font-mono font-black text-emerald-800">agro2026</code></span>
-          </div>
-          <button type="button" onclick="document.getElementById('loginPass').value='agro2026'; isOwnerLoggedIn = true; closeOwnerLoginModal(); selectCategory('cat-owner-dashboard');" class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs rounded-xl shadow-sm shadow-emerald-950/20 cursor-pointer transition-all hover:scale-102">
-            🚀 Entrar no Painel Agora
-          </button>
-        </div>
-      </div>
+
 
       <form onsubmit="submitOwnerLogin(event)" class="space-y-4 text-xs text-left">
         <div>
           <label class="block text-slate-700 font-bold mb-1 text-[11px] uppercase">E-mail do Proprietário:</label>
-          <input type="email" id="loginEmail" required value="contato@pulveragro.com.br" class="w-full bg-white border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600">
+          <input type="email" id="loginEmail" required placeholder="Ex: diretoria@pulveragro.com.br" class="w-full bg-white border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600">
         </div>
         <div>
           <div class="flex justify-between items-center mb-1">
             <label class="block text-slate-700 font-bold text-[11px] uppercase">Senha de Acesso:</label>
-            <span class="text-[11px] text-amber-700 font-semibold font-mono">agro2026</span>
           </div>
-          <input type="password" id="loginPass" required value="agro2026" class="w-full bg-white border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600">
+          <input type="password" id="loginPass" required placeholder="Digite sua senha de acesso" class="w-full bg-white border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600">
         </div>
 
         <button type="submit" class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-xs transition-all hover:scale-101">
@@ -5974,19 +5762,95 @@
           </div>
         </div>
 
+        <!-- CUSTOS OPERACIONAIS UNITÁRIOS DESTA FAZENDA (R$/ha) -->
+        <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-2xl space-y-2.5 text-left">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-black uppercase text-slate-700 flex items-center gap-1.5">
+              <i data-lucide="calculator" class="w-3.5 h-3.5 text-emerald-600"></i> Custos Operacionais desta Fazenda (R$ / ha):
+            </span>
+            <span class="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              Alimenta Médias Gerais do DRE
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div>
+              <label class="block text-[9px] font-bold text-slate-600 uppercase mb-0.5">1. Piloto / Campo:</label>
+              <div class="relative">
+                <span class="absolute left-2.5 top-2 text-[10px] text-slate-400">R$</span>
+                <input type="number" id="osCostComissao" step="0.5" value="19" oninput="recalcOsTotal()" class="w-full bg-white border border-slate-300 rounded-xl pl-7 pr-2 py-1.5 text-xs font-mono font-bold text-slate-800 focus:border-emerald-600">
+              </div>
+            </div>
+            <div>
+              <label class="block text-[9px] font-bold text-slate-600 uppercase mb-0.5">2. Baterias:</label>
+              <div class="relative">
+                <span class="absolute left-2.5 top-2 text-[10px] text-slate-400">R$</span>
+                <input type="number" id="osCostBateria" step="0.5" value="12" oninput="recalcOsTotal()" class="w-full bg-white border border-slate-300 rounded-xl pl-7 pr-2 py-1.5 text-xs font-mono font-bold text-slate-800 focus:border-emerald-600">
+              </div>
+            </div>
+            <div>
+              <label class="block text-[9px] font-bold text-slate-600 uppercase mb-0.5">3. Diesel & Frotas:</label>
+              <div class="relative">
+                <span class="absolute left-2.5 top-2 text-[10px] text-slate-400">R$</span>
+                <input type="number" id="osCostDiesel" step="0.5" value="10.5" oninput="recalcOsTotal()" class="w-full bg-white border border-slate-300 rounded-xl pl-7 pr-2 py-1.5 text-xs font-mono font-bold text-slate-800 focus:border-emerald-600">
+              </div>
+            </div>
+            <div>
+              <label class="block text-[9px] font-bold text-slate-600 uppercase mb-0.5">4. Manutenção:</label>
+              <div class="relative">
+                <span class="absolute left-2.5 top-2 text-[10px] text-slate-400">R$</span>
+                <input type="number" id="osCostManut" step="0.5" value="4.5" oninput="recalcOsTotal()" class="w-full bg-white border border-slate-300 rounded-xl pl-7 pr-2 py-1.5 text-xs font-mono font-bold text-slate-800 focus:border-emerald-600">
+              </div>
+            </div>
+          </div>
+
+          <!-- Resumo de Custo e Lucro Líquido Previsto desta Fazenda -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 border-t border-slate-200 text-xs">
+            <div class="p-2 rounded-xl bg-white border border-slate-200">
+              <span class="text-[9px] text-slate-500 uppercase font-bold block">Custo Total / ha:</span>
+              <strong class="text-rose-600 font-mono text-xs" id="osCostHaDisplay">R$ 46,00 / ha</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-white border border-slate-200">
+              <span class="text-[9px] text-slate-500 uppercase font-bold block">Custo Total da Fazenda:</span>
+              <strong class="text-rose-700 font-mono text-xs" id="osCostTotalDisplay">R$ 4.600,00</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-emerald-50 border border-emerald-300">
+              <span class="text-[9px] text-emerald-800 uppercase font-black block">Lucro Líquido Previsto:</span>
+              <strong class="text-emerald-700 font-mono text-xs" id="osLucroDisplay">R$ 6.400,00 (58,2%)</strong>
+            </div>
+          </div>
+        </div>
+
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label class="block font-bold text-slate-700 uppercase text-[10px] mb-1">Estágio Inicial na Esteira:</label>
             <select id="osStageSelect" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600">
-              <option value="orcamento">1. Orçamento / Proposta</option>
-              <option value="agendado">2. Agendado para Voo</option>
+              <option value="agendado" selected>2. Agendado para Voo</option>
               <option value="campo">3. Em Campo (Operação Ativa)</option>
+              <option value="orcamento">1. Orçamento / Proposta</option>
+              <option value="concluido">4. Concluído</option>
             </select>
           </div>
           <div>
-            <label class="block font-bold text-slate-700 uppercase text-[10px] mb-1">Data / Janela Climática:</label>
-            <input type="text" id="osDateInput" placeholder="Ex: 26/10/2026 às 06:00" value="Janela Imediata" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600">
+            <label class="block font-bold text-emerald-800 uppercase text-[10px] mb-1 flex items-center justify-between">
+              <span>📅 Agendar na Escala Semanal:</span>
+              <span class="text-[9px] text-emerald-600 font-mono">Alimenta a Agenda</span>
+            </label>
+            <select id="osAgendaDaySelect" class="w-full bg-emerald-50/70 border-2 border-emerald-500 rounded-xl p-2.5 text-xs text-emerald-950 font-bold focus:outline-none focus:border-emerald-600 cursor-pointer shadow-2xs">
+              <option value="0">Segunda-feira (20/10)</option>
+              <option value="1">Terça-feira (21/10)</option>
+              <option value="2">Quarta-feira (22/10)</option>
+              <option value="3" selected>Quinta-feira (23/10)</option>
+              <option value="4">Sexta-feira (24/10)</option>
+              <option value="5">Sábado (25/10)</option>
+              <option value="-1">Não agendar na semana agora</option>
+            </select>
           </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 uppercase text-[10px] mb-1">Horário & Janela de Voo:</label>
+          <input type="text" id="osDateInput" placeholder="Ex: Manhã às 06:00 (Delta T 4.5)" value="Manhã às 06:00" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600">
         </div>
 
         <div class="pt-2 flex items-center justify-end gap-2">
@@ -6690,6 +6554,19 @@
   <script>
     lucide.createIcons();
 
+    // Remover qualquer widget/badge injetado pelo Netlify
+    try {
+      const removeNetlifyWidgets = () => {
+        document.querySelectorAll('netlify-drawer, [data-netlify-deploy-id], iframe[src*="netlify"], a[href*="netlify.com"]').forEach(el => {
+          if (el.innerText && el.innerText.toLowerCase().includes('powered by')) el.remove();
+          else if (el.tagName === 'NETLIFY-DRAWER') el.remove();
+        });
+      };
+      removeNetlifyWidgets();
+      window.addEventListener('DOMContentLoaded', removeNetlifyWidgets);
+      setInterval(removeNetlifyWidgets, 1000);
+    } catch (e) {}
+
     // =========================================================
     // INTEGRAÇÃO BANCO DE DADOS EM NUVEM (SUPABASE - SÃO PAULO)
     // =========================================================
@@ -6728,7 +6605,7 @@
         phase: 'comercial',
         phaseName: 'Site Comercial',
         title: 'Nossos Serviços Especializados',
-        subtitle: 'Pulverização UBV, Adubação a Lanço, Semeadura, NDVI e Catação'
+        subtitle: 'Pulverização UBV, Adubação a Lanço, Semeadura e Catação'
       },
       'cat-comercial-como-funciona': {
         phase: 'comercial',
@@ -7059,9 +6936,15 @@
           if (id === categoryId) {
             viewEl.classList.remove('hidden');
             try { if (window.lucide) lucide.createIcons(); } catch (e) {}
+            if (categoryId === 'cat-owner-dashboard') {
+              try { if (typeof renderFazendasGestaoTable === 'function') renderFazendasGestaoTable(); } catch (e) {}
+              try { if (typeof renderOwnerCropsChart === 'function') renderOwnerCropsChart(); } catch (e) {}
+            }
             if (categoryId === 'cat-owner-financial') {
               setTimeout(() => {
                 try { if (typeof initFinancialCharts === 'function') initFinancialCharts(); } catch (e) {}
+                try { if (typeof renderFarmCostsTable === 'function') renderFarmCostsTable(); } catch (e) {}
+                try { if (typeof renderContasReceber === 'function') renderContasReceber(); } catch (e) {}
               }, 50);
             }
             if (categoryId === 'cat-owner-mensal') {
@@ -7075,6 +6958,12 @@
             }
             if (categoryId === 'cat-owner-frota') {
               try { renderFrotaViews(); } catch (e) {}
+            }
+            if (categoryId === 'cat-owner-agenda') {
+              try { renderWeeklyAgenda(); } catch (e) {}
+            }
+            if (categoryId === 'cat-owner-os' || categoryId === 'cat-owner-kanban') {
+              try { renderKanban(); } catch (e) {}
             }
           } else {
             viewEl.classList.add('hidden');
@@ -7136,6 +7025,8 @@
         renderWeeklyAgenda();
     setTimeout(initFinancialCharts, 300);
     renderKanban();
+      renderFarmCostsTable();
+      updateDreFromMissionAverages();
     renderFrotaViews();
     loadCompanyPriceTable();
     selectCategory('cat-comercial-home');
@@ -7171,7 +7062,7 @@
         closeOwnerLoginModal();
         selectCategory('cat-owner-dashboard');
       } else {
-        alert('Senha incorreta! Utilize a senha de demonstração: agro2026');
+        alert('Senha incorreta! Por favor, digite a senha autorizada da diretoria.');
       }
     }
 
@@ -7296,8 +7187,8 @@
       feedback.classList.remove('hidden');
       feedback.innerText = `Arquivo carregado com sucesso: "${file.name}". Área estimada calculada: 142.5 hectares.`;
 
-      document.getElementById('simAreaSlider').value = 150;
-      recalculateQuote();
+      const s1 = document.getElementById('simAreaSlider'); if (s1) s1.value = 150;
+      if (typeof recalculateQuote === 'function') recalculateQuote();
     }
 
     function loadSampleKml() {
@@ -7305,8 +7196,8 @@
       feedback.classList.remove('hidden');
       feedback.innerText = `Talhão de Demonstração Carregado: "Fazenda Santa Helena — Talhão 04 Pivô". Área: 100.0 hectares.`;
 
-      document.getElementById('simAreaSlider').value = 100;
-      recalculateQuote();
+      const s2 = document.getElementById('simAreaSlider'); if (s2) s2.value = 100;
+      if (typeof recalculateQuote === 'function') recalculateQuote();
     }
 
     // 8. IDEIA 3: SEMÁFORO DA JANELA CLIMÁTICA
@@ -7411,26 +7302,65 @@
     function recalculateQuote() {
       const select = document.getElementById('simServiceSelect');
       if (!select) return;
-      selectedPricePerHa = Number(select.value) || 0;
+      let basePrice = Number(select.value) || 110;
+
+      // 1. Ajuste Dinâmico por Volume de Calda (L/ha)
+      const vazaoSelect = document.getElementById('simVazaoSelect');
+      const vazaoL = vazaoSelect ? Number(vazaoSelect.value) : 10;
+      const vazaoAdj = vazaoSelect && vazaoSelect.selectedOptions[0] ? (Number(vazaoSelect.selectedOptions[0].getAttribute('data-adj')) || 0) : 0;
+      selectedPricePerHa = basePrice + vazaoAdj;
+
+      const vazaoBadge = document.getElementById('simVazaoBadge');
+      if (vazaoBadge) {
+        if (vazaoL <= 10) vazaoBadge.innerText = 'UBV Otimizado (8-10 L/ha)';
+        else if (vazaoL <= 15) vazaoBadge.innerText = 'Médio Volume (12-15 L/ha)';
+        else vazaoBadge.innerText = 'Alto Volume (18-25 L/ha)';
+      }
+
+      // Rendimento por Voo & Trocas de Bateria estimadas
+      const autonomiaHa = vazaoL <= 10 ? 4.2 : (vazaoL <= 15 ? 2.8 : 1.9);
+      const vooEl = document.getElementById('simVooAutonomia');
+      if (vooEl) vooEl.innerText = autonomiaHa + ' ha / voo';
+
       const areaInput = document.getElementById('simAreaInput');
       const areaSlider = document.getElementById('simAreaSlider');
       const ha = areaInput ? (Number(areaInput.value) || 130) : (areaSlider ? Number(areaSlider.value) : 130);
       
-      // Logística e Deslocamento (Frota própria inclusa sem custo adicional para o produtor)
+      const trocasBateria = Math.ceil(ha / autonomiaHa);
+      const batQtdEl = document.getElementById('simBateriasQtd');
+      if (batQtdEl) batQtdEl.innerText = trocasBateria + ' trocas';
+
+      // 2. Logística e Deslocamento com Franquia de 50 km e Isenção para Escala
       const distSlider = document.getElementById('simDistSlider');
       const distKm = distSlider ? Number(distSlider.value) : 40;
-      const arrivalMin = Math.round(distKm * 1.15); // média de 50-60 km/h em estrada vicinal
+      const arrivalMin = Math.round(distKm * 1.15); // média de 50-60 km/h em vicinal
 
       const distLabel = document.getElementById('simDistLabel');
       if (distLabel) distLabel.innerText = distKm + ' km';
+
+      // Cálculo de Mobilização
+      let taxaMobilizacao = 0;
+      let extraKm = 0;
+      const franquiaKm = ha >= 150 ? 120 : 50;
+      if (distKm > franquiaKm && ha < 150) {
+        extraKm = distKm - franquiaKm;
+        taxaMobilizacao = extraKm * 4.50; // R$ 4,50 / km excedente
+      }
+
       const arrivalEl = document.getElementById('simArrivalEst');
-      if (arrivalEl) arrivalEl.innerText = 'em até ' + arrivalMin + ' min';
+      if (arrivalEl) {
+        if (taxaMobilizacao > 0) {
+          arrivalEl.innerHTML = `em até ${arrivalMin} min <span class="text-[10px] text-amber-700 font-bold block">(+ R$ ${taxaMobilizacao.toFixed(2)} frete excedente ${extraKm} km)</span>`;
+        } else {
+          arrivalEl.innerHTML = `em até ${arrivalMin} min <span class="text-[10px] text-emerald-700 font-bold block">(100% Grátis • Franquia ${franquiaKm} km)</span>`;
+        }
+      }
 
       const areaLabelEl = document.getElementById('simAreaLabel');
       if (areaLabelEl) areaLabelEl.innerText = ha.toLocaleString('pt-BR') + ' ha';
       
-      // Total limpo com cálculo de condição de pagamento (Melhoria 3 / 4.1)
-      const baseTotal = ha * selectedPricePerHa;
+      // Total limpo com cálculo de condição de pagamento e taxa de mobilização
+      const baseTotal = (ha * selectedPricePerHa) + taxaMobilizacao;
       let finalTotal = baseTotal;
       if (typeof currentPaymentMode !== 'undefined' && currentPaymentMode === 'avista') {
         finalTotal = baseTotal * 0.97; // 3% desconto à vista
@@ -7503,7 +7433,12 @@
       const total = totalEl ? totalEl.innerText : 'Consulte';
       const payDesc = (typeof currentPaymentMode !== 'undefined' && currentPaymentMode === 'barter') ? 'Safra Futura (Barter em Sacas)' : 'À Vista (3% Desc. Aplicado)';
 
-      const text = `Olá, equipe PulverAgro Brasil!\n\nFiz uma simulação pelo site e gostaria de contratar o serviço:\n\n*Operação:* ${serviceName}\n*Área:* ${ha} hectares\n*Investimento Estimado:* ${total}\n*Condição de Pagamento:* ${payDesc}\n*Termos de Aceite:* Confirmados (Seguro RETA e ART)\n\nFavor informar disponibilidade técnica de datas na minha fazenda.`;
+      const vazaoSelectEl = document.getElementById('simVazaoSelect');
+      const vazaoDesc = vazaoSelectEl ? vazaoSelectEl.selectedOptions[0]?.text.split('(')[0].trim() : 'UBV (8-10 L/ha)';
+      const distSliderEl = document.getElementById('simDistSlider');
+      const distVal = distSliderEl ? distSliderEl.value : '40';
+
+      const text = `Olá, equipe PulverAgro Brasil!\n\nFiz uma simulação pelo site e gostaria de contratar o serviço:\n\n*Operação:* ${serviceName}\n*Volume de Calda:* ${vazaoDesc}\n*Área:* ${ha} hectares\n*Distância Base:* ${distVal} km\n*Investimento Estimado:* ${total}\n*Condição de Pagamento:* ${payDesc}\n*Garantias & ART:* Seguro RETA ANAC e ART CREA confirmados\n*Standby Climático:* Portaria 298 MAPA (vento limite 15 km/h, UR > 55%)\n\nFavor informar disponibilidade técnica de datas na minha fazenda.`;
 
       // Salvar em tempo real no Supabase
       if (supabaseClient) {
@@ -8336,28 +8271,7 @@
       }
     }
 
-    // 20. Avanço no Pipeline Kanban de O.S.
-    function advanceOsStatus(osId, targetStatus) {
-      alert(`Ordem de Serviço ${osId} avançada com sucesso para o estágio: ${targetStatus.toUpperCase()}!`);
-      // Adicionar log de auditoria
-      const auditTable = document.getElementById('auditLogTableBody');
-      if (auditTable) {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td class="py-2 px-3 text-slate-300">Hoje às ${new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</td>
-          <td class="py-2 px-3 text-white font-bold">${currentActiveRole.toUpperCase()}</td>
-          <td class="py-2 px-3 text-yellow-400">Avançou ${osId} para ${targetStatus.toUpperCase()}</td>
-          <td class="py-2 px-3 text-slate-400">189.44.12.8 (App Web)</td>
-          <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded text-[9px] bg-emerald-500/20 text-emerald-400 font-bold">SUCESSO</span></td>
-        `;
-        auditTable.prepend(row);
-      }
-    }
-
-    function openNewOsModal() {
-      alert('Abrindo formulário de criação de nova Ordem de Serviço com alocação de drone DJI e piloto credenciado.');
-      selectCategory('cat-comercial-cotacao');
-    }
+    // (Funções de O.S. e Kanban unificadas e migradas para o módulo operacional)
 
     // 21. Contas a Receber da Safra (Gestão de Invoices)
     let contasReceber = [
@@ -8737,11 +8651,11 @@
     // 1. GESTÃO INTERATIVA DO PIPELINE KANBAN DE O.S. (DIRETORIA)
     // =========================================================
     let kanbanMissionsData = [
-      { id: 'OS-2026-0045', farm: 'Fazenda Alvorada', city: 'Cascavel/PR', culture: 'Soja R2', ha: 120, priceHa: 110, total: 13200, status: 'orcamento', pilot: 'A definir', drone: 'DJI T50', date: 'Janela 25/10' },
-      { id: 'OS-2026-0046', farm: 'Fazenda São José', city: 'Rio Verde/GO', culture: 'Algodão', ha: 80, priceHa: 120, total: 9600, status: 'agendado', pilot: 'Piloto Guilherme (DJI T50)', drone: 'DJI T50', date: 'Amanhã às 06:00' },
-      { id: 'OS-2026-0047', farm: 'Fazenda Boa Esperança', city: 'Tupaciguara/MG', culture: 'Milho Safrinha', ha: 62, priceHa: 110, total: 6820, status: 'campo', pilot: 'Piloto Guilherme (DJI T50)', drone: 'DJI T50', date: 'Em Voo 4/6' },
-      { id: 'OS-2026-0042', farm: 'Fazenda Santa Helena', city: 'Tupaciguara/MG', culture: 'Soja R3', ha: 100, priceHa: 110, total: 11000, status: 'concluido', pilot: 'Piloto Guilherme (DJI T40)', drone: 'DJI T40', date: '20/10/2026' },
-      { id: 'OS-2026-0044', farm: 'Grupo Santa Maria', city: 'Lucas do Rio Verde/MT', culture: 'Soja Pré-Colheita', ha: 45, priceHa: 120, total: 5400, status: 'faturado', pilot: 'Piloto Osmar (DJI T40)', drone: 'DJI T40', date: '18/10/2026' }
+      { id: 'OS-2026-0045', farm: 'Fazenda Alvorada', city: 'Cascavel/PR', culture: 'Soja R2', ha: 120, priceHa: 110, total: 13200, costComissao: 19, costBateria: 12, costDiesel: 10.5, costManut: 4.5, status: 'orcamento', pilot: 'A definir', drone: 'DJI T50', date: 'Janela 25/10' },
+      { id: 'OS-2026-0046', farm: 'Fazenda São José', city: 'Rio Verde/GO', culture: 'Algodão', ha: 80, priceHa: 120, total: 9600, costComissao: 20, costBateria: 12, costDiesel: 11.5, costManut: 4.5, status: 'agendado', pilot: 'Piloto Guilherme (DJI T50)', drone: 'DJI T50', date: 'Amanhã às 06:00' },
+      { id: 'OS-2026-0047', farm: 'Fazenda Boa Esperança', city: 'Tupaciguara/MG', culture: 'Milho Safrinha', ha: 62, priceHa: 110, total: 6820, costComissao: 18, costBateria: 12, costDiesel: 10.0, costManut: 4.5, status: 'campo', pilot: 'Piloto Guilherme (DJI T50)', drone: 'DJI T50', date: 'Em Voo 4/6' },
+      { id: 'OS-2026-0042', farm: 'Fazenda Santa Helena', city: 'Tupaciguara/MG', culture: 'Soja R3', ha: 100, priceHa: 110, total: 11000, costComissao: 19, costBateria: 12, costDiesel: 10.5, costManut: 4.5, status: 'concluido', pilot: 'Piloto Guilherme (DJI T40)', drone: 'DJI T40', date: '20/10/2026' },
+      { id: 'OS-2026-0044', farm: 'Grupo Santa Maria', city: 'Lucas do Rio Verde/MT', culture: 'Soja Pré-Colheita', ha: 45, priceHa: 120, total: 5400, costComissao: 22, costBateria: 12, costDiesel: 11.0, costManut: 5.0, status: 'faturado', pilot: 'Piloto Osmar (DJI T40)', drone: 'DJI T40', date: '18/10/2026' }
     ];
 
     try {
@@ -8750,6 +8664,168 @@
         kanbanMissionsData = JSON.parse(savedKanban);
       }
     } catch (e) {}
+
+    // =========================================================
+    // AUDITORIA DE CUSTOS OPERACIONAIS POR FAZENDA & DRE DINÂMICO
+    // =========================================================
+    function renderFarmCostsTable() {
+      const tbody = document.getElementById('tabelaCustosFazendaBody');
+      const tfoot = document.getElementById('tabelaCustosFazendaFoot');
+      if (!tbody) return;
+
+      tbody.innerHTML = '';
+
+      let totHa = 0;
+      let totReceita = 0;
+      let totComissao = 0;
+      let totBateria = 0;
+      let totDiesel = 0;
+      let totManut = 0;
+      let totCustoGeral = 0;
+      let totLucroGeral = 0;
+
+      kanbanMissionsData.forEach(os => {
+        const ha = Number(os.ha) || 0;
+        const price = Number(os.priceHa) || 110;
+        const receita = Number(os.total) || (ha * price);
+
+        const cComUnit = Number(os.costComissao) || 19;
+        const cBatUnit = Number(os.costBateria) || 12;
+        const cDieUnit = Number(os.costDiesel) || 10.5;
+        const cManUnit = Number(os.costManut) || 4.5;
+
+        const comissaoTotal = ha * cComUnit;
+        const bateriaTotal = ha * cBatUnit;
+        const dieselTotal = ha * cDieUnit;
+        const manutTotal = ha * cManUnit;
+
+        const custoTotal = comissaoTotal + bateriaTotal + dieselTotal + manutTotal;
+        const lucroLiquido = receita - custoTotal;
+        const margem = receita > 0 ? ((lucroLiquido / receita) * 100).toFixed(1) : '0.0';
+
+        totHa += ha;
+        totReceita += receita;
+        totComissao += comissaoTotal;
+        totBateria += bateriaTotal;
+        totDiesel += dieselTotal;
+        totManut += manutTotal;
+        totCustoGeral += custoTotal;
+        totLucroGeral += lucroLiquido;
+
+        const row = document.createElement('tr');
+        row.className = 'hover:bg-slate-50 transition-colors border-b border-slate-100';
+        row.innerHTML = `
+          <td class="p-3 text-slate-900 font-bold font-sans">
+            <div>${os.farm}</div>
+            <span class="text-[10px] text-slate-400 font-mono">${os.city || 'Tupaciguara/MG'} • ${os.culture}</span>
+          </td>
+          <td class="p-3 text-center font-bold text-slate-800">${ha.toLocaleString('pt-BR')}</td>
+          <td class="p-3 text-right text-slate-900 font-bold">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(receita)}</td>
+          <td class="p-3 text-right text-amber-700">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(comissaoTotal)}</td>
+          <td class="p-3 text-right text-sky-700">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(bateriaTotal)}</td>
+          <td class="p-3 text-right text-rose-700">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(dieselTotal)}</td>
+          <td class="p-3 text-right text-slate-600">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(manutTotal)}</td>
+          <td class="p-3 text-right text-rose-700 font-bold">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(custoTotal)}</td>
+          <td class="p-3 text-right text-emerald-700 font-black bg-emerald-50/50">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(lucroLiquido)}</td>
+          <td class="p-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] font-black ${parseFloat(margem) >= 50 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">${margem}%</span></td>
+          <td class="p-3 text-center"><span class="px-2 py-0.5 rounded text-[9px] font-bold uppercase bg-slate-100 text-slate-700">${os.status}</span></td>
+        `;
+        tbody.appendChild(row);
+      });
+
+      if (tfoot) {
+        const margemGeral = totReceita > 0 ? ((totLucroGeral / totReceita) * 100).toFixed(1) : '0.0';
+        tfoot.innerHTML = `
+          <tr>
+            <td class="p-3 font-black text-slate-900 font-sans">MÉDIAS / TOTAIS GERAIS:</td>
+            <td class="p-3 text-center font-black">${totHa.toLocaleString('pt-BR')} ha</td>
+            <td class="p-3 text-right font-black">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totReceita)}</td>
+            <td class="p-3 text-right text-amber-800">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totComissao)}</td>
+            <td class="p-3 text-right text-sky-800">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totBateria)}</td>
+            <td class="p-3 text-right text-rose-800">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totDiesel)}</td>
+            <td class="p-3 text-right text-slate-700">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totManut)}</td>
+            <td class="p-3 text-right text-rose-800 font-black">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totCustoGeral)}</td>
+            <td class="p-3 text-right text-emerald-800 font-black bg-emerald-100">${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totLucroGeral)}</td>
+            <td class="p-3 text-center font-black text-emerald-800">${margemGeral}%</td>
+            <td class="p-3 text-center text-slate-500 font-sans text-[10px]">Auditado</td>
+          </tr>
+        `;
+      }
+    }
+
+    // Calcula as médias ponderadas de todas as fazendas e atualiza os cards do DRE na hora
+    function updateDreFromMissionAverages() {
+      if (!kanbanMissionsData || kanbanMissionsData.length === 0) return;
+
+      let totalHa = 0;
+      let totalReceita = 0;
+      let totalComissao = 0;
+      let totalBateria = 0;
+      let totalDiesel = 0;
+      let totalManutencao = 0;
+
+      kanbanMissionsData.forEach(m => {
+        const ha = Number(m.ha) || 0;
+        if (ha <= 0) return;
+        totalHa += ha;
+        totalReceita += Number(m.total) || (ha * (Number(m.priceHa) || 110));
+        totalComissao += ha * (Number(m.costComissao) || 19);
+        totalBateria += ha * (Number(m.costBateria) || 12);
+        totalDiesel += ha * (Number(m.costDiesel) || 10.5);
+        totalManutencao += ha * (Number(m.costManut) || 4.5);
+      });
+
+      if (totalHa > 0) {
+        dreConfig.receita = totalReceita / totalHa;
+        dreConfig.comissao = totalComissao / totalHa;
+        dreConfig.bateria = totalBateria / totalHa;
+        dreConfig.diesel = totalDiesel / totalHa;
+        dreConfig.manutencao = totalManutencao / totalHa;
+        if (typeof atualizarExibicaoDre === 'function') atualizarExibicaoDre();
+        if (typeof renderFarmCostsTable === 'function') renderFarmCostsTable();
+      }
+    }
+
+    function exportFarmCostsCsv() {
+      const headers = ['Fazenda', 'Municipio', 'Cultura', 'Area_ha', 'Receita_Total', 'Piloto_Total', 'Bateria_Total', 'Diesel_Total', 'Manut_Total', 'Custo_Total', 'Lucro_Liquido', 'Margem_Pct', 'Status'];
+      const rows = kanbanMissionsData.map(function(os) {
+        var ha = Number(os.ha) || 0;
+        var rec = Number(os.total) || (ha * (Number(os.priceHa) || 110));
+        var com = ha * (Number(os.costComissao) || 19);
+        var bat = ha * (Number(os.costBateria) || 12);
+        var die = ha * (Number(os.costDiesel) || 10.5);
+        var man = ha * (Number(os.costManut) || 4.5);
+        var cus = com + bat + die + man;
+        var luc = rec - cus;
+        var mar = rec > 0 ? ((luc / rec) * 100).toFixed(1) : '0.0';
+        return [
+          '"' + os.farm + '"',
+          '"' + (os.city || '') + '"',
+          '"' + (os.culture || '') + '"',
+          ha,
+          rec.toFixed(2),
+          com.toFixed(2),
+          bat.toFixed(2),
+          die.toFixed(2),
+          man.toFixed(2),
+          cus.toFixed(2),
+          luc.toFixed(2),
+          mar,
+          '"' + os.status + '"'
+        ].join(';');
+      });
+
+      var csvContent = '\uFEFF' + [headers.join(';'), rows.join('\n')].join('\n');
+      var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'Custos_Operacionais_Por_Fazenda.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      alert('Relatório de Custos por Fazenda exportado com sucesso em CSV!');
+    }
 
     function renderKanban() {
       const cols = {
@@ -8890,12 +8966,36 @@
       if (modal) modal.classList.add('hidden');
     }
 
+
+
     function recalcOsTotal() {
-      const ha = parseFloat(document.getElementById('osHaInput').value) || 0;
-      const price = parseFloat(document.getElementById('osPriceInput').value) || 0;
-      const total = ha * price;
-      const display = document.getElementById('osTotalDisplay');
-      if (display) display.value = 'R$ ' + total.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+      const ha = parseFloat(document.getElementById('osHaInput')?.value) || 0;
+      const priceHa = parseFloat(document.getElementById('osPriceInput')?.value) || 0;
+      const total = ha * priceHa;
+      const totalDisplay = document.getElementById('osTotalDisplay');
+      if (totalDisplay) {
+        totalDisplay.value = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(total);
+      }
+
+      // Custos específicos desta fazenda
+      const cCom = parseFloat(document.getElementById('osCostComissao')?.value) || 19;
+      const cBat = parseFloat(document.getElementById('osCostBateria')?.value) || 12;
+      const cDie = parseFloat(document.getElementById('osCostDiesel')?.value) || 10.5;
+      const cMan = parseFloat(document.getElementById('osCostManut')?.value) || 4.5;
+
+      const costUnit = cCom + cBat + cDie + cMan;
+      const costTotal = ha * costUnit;
+      const lucro = total - costTotal;
+      const margem = total > 0 ? ((lucro / total) * 100).toFixed(1) : '0.0';
+
+      const costHaEl = document.getElementById('osCostHaDisplay');
+      if (costHaEl) costHaEl.innerText = `R$ ${costUnit.toFixed(2).replace('.', ',')} / ha`;
+
+      const costTotEl = document.getElementById('osCostTotalDisplay');
+      if (costTotEl) costTotEl.innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(costTotal);
+
+      const lucroEl = document.getElementById('osLucroDisplay');
+      if (lucroEl) lucroEl.innerText = `${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(lucro)} (${margem}%)`;
     }
 
     function saveNewOs(e) {
@@ -8910,6 +9010,11 @@
       const date = document.getElementById('osDateInput').value.trim();
       const total = ha * priceHa;
 
+      const cCom = parseFloat(document.getElementById('osCostComissao')?.value) || 19;
+      const cBat = parseFloat(document.getElementById('osCostBateria')?.value) || 12;
+      const cDie = parseFloat(document.getElementById('osCostDiesel')?.value) || 10.5;
+      const cMan = parseFloat(document.getElementById('osCostManut')?.value) || 4.5;
+
       const newId = 'OS-2026-00' + Math.floor(50 + Math.random() * 50);
 
       const newOs = {
@@ -8920,6 +9025,10 @@
         ha: ha,
         priceHa: priceHa,
         total: total,
+        costComissao: cCom,
+        costBateria: cBat,
+        costDiesel: cDie,
+        costManut: cMan,
         status: status,
         pilot: pilot,
         drone: pilot.includes('T50') ? 'DJI T50' : 'DJI T40',
@@ -8958,9 +9067,34 @@
         });
       }
 
+      // Agendar automaticamente no dia da semana selecionado na Agenda
+      let dayScheduledName = '';
+      const dayIdx = parseInt(document.getElementById('osAgendaDaySelect')?.value, 10);
+      if (!isNaN(dayIdx) && dayIdx >= 0 && dayIdx < weeklyAgendaData.length) {
+        let agendaStatus = 'AGENDADO';
+        if (status === 'campo') agendaStatus = 'EM CAMPO';
+        else if (status === 'concluido' || status === 'faturado') agendaStatus = 'CONCLUÍDO';
+        else if (status === 'orcamento') agendaStatus = 'AGENDADO';
+
+        weeklyAgendaData[dayIdx].farm = farm;
+        weeklyAgendaData[dayIdx].ha = ha;
+        weeklyAgendaData[dayIdx].pilot = pilot;
+        weeklyAgendaData[dayIdx].status = agendaStatus;
+        weeklyAgendaData[dayIdx].obs = `${culture} • ${date}`;
+        dayScheduledName = weeklyAgendaData[dayIdx].day;
+
+        try {
+          localStorage.setItem('pulveragro_weekly_agenda', JSON.stringify(weeklyAgendaData));
+        } catch (err) {}
+
+        renderWeeklyAgenda();
+      }
+
       renderKanban();
+      renderFarmCostsTable();
+      updateDreFromMissionAverages();
       closeNewOsModal();
-      alert(`✅ Ordem de Serviço ${newId} criada com sucesso para ${farm} (${ha} ha)!`);
+      alert(`✅ Ordem de Serviço ${newId} criada com sucesso para ${farm} (${ha} ha)!${dayScheduledName ? ' Agendada na ' + dayScheduledName + ' na Escala Semanal.' : ''}`);
     }
 
     // =========================================================
@@ -9668,26 +9802,13 @@
     // C. Selecionar Serviço Diretamente a partir da Página de Serviços
     function selectServiceForQuote(serviceName, defaultPrice) {
       selectCategory('cat-comercial-cotacao');
-      const select = document.getElementById('simServiceSelect');
-      if (select) {
-        // Encontrar ou adicionar option
-        let found = false;
-        for (let i = 0; i < select.options.length; i++) {
-          if (select.options[i].text.includes(serviceName) || select.options[i].getAttribute('data-name') === serviceName) {
-            select.selectedIndex = i;
-            found = true;
-            break;
-          }
-        }
-        if (!found) {
-          const opt = document.createElement('option');
-          opt.value = defaultPrice;
-          opt.text = `${serviceName} (R$ ${defaultPrice}/ha)`;
-          opt.setAttribute('data-name', serviceName);
-          select.appendChild(opt);
-          select.value = defaultPrice;
-        }
-        recalculateQuote();
+      const cropInput = document.getElementById('quoteDirectCrop');
+      if (cropInput && serviceName) {
+        cropInput.value = serviceName + (defaultPrice ? ' (R$ ' + defaultPrice + '/ha)' : '');
+      }
+      const nameInput = document.getElementById('quoteDirectName');
+      if (nameInput) {
+        setTimeout(function() { nameInput.focus(); }, 250);
       }
     }
 
@@ -9841,7 +9962,7 @@
             reportCode: 'AGV-2026-T40-9742-SOR',
             date: '12/09/2026',
             talhao: 'Talhão 08 - Baixada (500 ha)',
-            service: 'Mapeamento Multiespectral NDVI',
+            service: 'Catação Cirúrgica Spot Spraying',
             product: 'Sensor RedEdge + RGB',
             rate: 'GSD 1.8 cm/pixel',
             drone: 'DJI Mavic 3 Enterprise RTK',
@@ -10010,7 +10131,7 @@
       }
       const val = document.getElementById('clientPortalLoginInput').value.trim();
       if (!val) {
-        alert('Por favor, digite o CNPJ ou WhatsApp da sua fazenda, ou selecione uma conta de demonstração abaixo.');
+        alert('Por favor, digite o CNPJ ou WhatsApp da sua fazenda.');
         return;
       }
 
@@ -10856,6 +10977,7 @@
     }
 
     function atualizarExibicaoDre() {
+      window.atualizarDreUnitarioUI = atualizarExibicaoDre;
       const custoTotal = dreConfig.comissao + dreConfig.bateria + dreConfig.diesel + dreConfig.manutencao;
       const lucroUnit = dreConfig.receita - custoTotal;
       const margemPct = ((lucroUnit / dreConfig.receita) * 100).toFixed(1).replace('.', ',');
@@ -11589,34 +11711,23 @@
       <!-- ABA 1: ENTRAR NA CONTA -->
       <div id="tabContentClientLogin" class="space-y-4 text-left">
         
-        <!-- Cartão de Acesso Rápido para Demonstração -->
-        <div class="p-3 rounded-2xl bg-emerald-50/80 border border-emerald-200/90 flex items-center justify-between gap-3">
-          <div>
-            <span class="text-[10px] uppercase font-black text-emerald-700 tracking-wider block">Propriedade Ativa:</span>
-            <strong class="text-xs font-black text-slate-900 block">Fazenda Santa Helena</strong>
-            <span class="text-[10px] text-slate-500 font-mono">CNPJ: 08.432.198/0001-44</span>
-          </div>
-          <button onclick="loginAsProducerDemo('cli-001')" class="px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs flex items-center gap-1.5 shadow-sm transition-transform hover:scale-102">
-            <i data-lucide="log-in" class="w-3.5 h-3.5"></i> Entrar Direto
-          </button>
-        </div>
+
 
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase">CNPJ ou WhatsApp da Fazenda:</label>
           <div class="relative">
             <i data-lucide="user-check" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
-            <input type="text" id="clientPortalLoginInput" value="08.432.198/0001-44" placeholder="Ex: (66) 99872-4510 ou CNPJ da fazenda" class="w-full bg-white border border-slate-300 rounded-xl pl-10 pr-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600">
+            <input type="text" id="clientPortalLoginInput" placeholder="Ex: CNPJ ou WhatsApp da sua propriedade" class="w-full bg-white border border-slate-300 rounded-xl pl-10 pr-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600">
           </div>
         </div>
 
         <div>
           <div class="flex justify-between items-center mb-1.5">
             <label class="block text-xs font-bold text-slate-700 uppercase">Senha de Acesso / PIN:</label>
-            <span class="text-[11px] text-emerald-700 font-semibold">PIN: 1234</span>
           </div>
           <div class="relative">
             <i data-lucide="lock" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
-            <input type="password" id="clientPortalPasswordInput" value="1234" placeholder="Digite sua senha cadastrada" class="w-full bg-white border border-slate-300 rounded-xl pl-10 pr-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600">
+            <input type="password" id="clientPortalPasswordInput" placeholder="Digite sua senha / PIN de 4 dígitos" class="w-full bg-white border border-slate-300 rounded-xl pl-10 pr-3 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600">
           </div>
         </div>
 
