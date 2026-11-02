@@ -4306,7 +4306,7 @@
               </span>
               <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Painel Executivo & Faturamento da Safra</h2>
               <p class="text-xs text-slate-600">
-                Indicadores financeiros consolidados de 207 hectares executados nesta safra.
+                Indicadores financeiros consolidados da safra atual em tempo real.
               </p>
             </div>
 
@@ -4464,26 +4464,26 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 text-xs">
               <div class="brasil-card p-2.5 sm:p-4 rounded-2xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
                 <span class="text-[9px] sm:text-[10px] font-black uppercase text-slate-500 block truncate">Total Hectares Ano</span>
-                <div class="text-xs sm:text-lg lg:text-xl font-black text-slate-900 font-sans tracking-tight whitespace-nowrap" id="kpiMensalHectares">9.150 ha</div>
+                <div class="text-xs sm:text-lg lg:text-xl font-black text-slate-900 font-sans tracking-tight whitespace-nowrap" id="kpiMensalHectares">0 ha</div>
                 <span class="text-[9px] sm:text-[10px] text-emerald-700 font-bold block truncate">Safra Consolidada</span>
               </div>
 
               <div class="brasil-card p-2.5 sm:p-4 rounded-2xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
                 <span class="text-[9px] sm:text-[10px] font-black uppercase text-slate-500 block truncate">Faturamento Bruto</span>
-                <div class="text-xs sm:text-lg lg:text-xl font-black text-emerald-800 font-sans tracking-tight whitespace-nowrap" id="kpiMensalFaturamento">R$ 1.006.500,00</div>
+                <div class="text-xs sm:text-lg lg:text-xl font-black text-emerald-800 font-sans tracking-tight whitespace-nowrap" id="kpiMensalFaturamento">R$ 0,00</div>
                 <span class="text-[9px] sm:text-[10px] text-slate-600 font-medium block truncate">Preço médio R$ 110/ha</span>
               </div>
 
               <div class="brasil-card p-2.5 sm:p-4 rounded-2xl border border-slate-200 space-y-0.5 sm:space-y-1 overflow-hidden">
                 <span class="text-[9px] sm:text-[10px] font-black uppercase text-slate-500 block truncate">Custos Operacionais</span>
-                <div class="text-xs sm:text-lg lg:text-xl font-black text-rose-600 font-sans tracking-tight whitespace-nowrap" id="kpiMensalCustos">- R$ 384.300,00</div>
+                <div class="text-xs sm:text-lg lg:text-xl font-black text-rose-600 font-sans tracking-tight whitespace-nowrap" id="kpiMensalCustos">- R$ 0,00</div>
                 <span class="text-[9px] sm:text-[10px] text-slate-600 font-medium block truncate">Piloto + Bateria + Diesel</span>
               </div>
 
               <div class="brasil-card p-2.5 sm:p-4 rounded-2xl border-2 border-emerald-500/80 space-y-0.5 sm:space-y-1 overflow-hidden bg-emerald-50/50">
                 <span class="text-[9px] sm:text-[10px] font-black uppercase text-emerald-900 block truncate">Lucro Líquido Real</span>
-                <div class="text-xs sm:text-lg lg:text-xl font-black text-emerald-950 font-sans tracking-tight whitespace-nowrap" id="kpiMensalLucro">R$ 622.200,00</div>
-                <span class="text-[9px] sm:text-[10px] text-emerald-700 font-black block truncate" id="kpiMensalMargem">61,8% Margem Líquida</span>
+                <div class="text-xs sm:text-lg lg:text-xl font-black text-emerald-950 font-sans tracking-tight whitespace-nowrap" id="kpiMensalLucro">R$ 0,00</div>
+                <span class="text-[9px] sm:text-[10px] text-emerald-700 font-black block truncate" id="kpiMensalMargem">0.0% Margem Líquida</span>
               </div>
             </div>
 
@@ -4570,13 +4570,13 @@
                 </div>
                 <div class="p-3.5 rounded-2xl bg-white border border-slate-200 space-y-1">
                   <span class="text-[10px] text-slate-500 font-bold uppercase block">3. Hectares Voados na Safra</span>
-                  <strong class="text-base font-black text-slate-900 font-mono" id="kpiBreakEvenExecutado">9.150 ha</strong>
-                  <span class="text-[10px] text-emerald-600 font-bold block">✓ Ponto de Equilíbrio Superado</span>
+                  <strong class="text-base font-black text-slate-900 font-mono" id="kpiBreakEvenExecutado">0 ha</strong>
+                  <span class="text-[10px] text-slate-500 font-bold block" id="kpiBreakEvenStatus">Aguardando voos da safra</span>
                 </div>
                 <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-300 space-y-1">
                   <span class="text-[10px] text-emerald-800 font-black uppercase block">4. Margem de Segurança</span>
-                  <strong class="text-base font-black text-emerald-900 font-mono">+ 8.298 ha</strong>
-                  <span class="text-[10px] text-emerald-700 font-semibold block">97,7% da safra em Lucro Líquido Puro</span>
+                  <strong class="text-base font-black text-emerald-900 font-mono" id="kpiBreakEvenMargemSeg">0 ha</strong>
+                  <span class="text-[10px] text-slate-500 font-semibold block" id="kpiBreakEvenSub">Ponto de equilíbrio: 213 ha</span>
                 </div>
               </div>
 
@@ -4593,7 +4593,7 @@
                 <div class="flex justify-between text-[9px] text-slate-400 font-mono">
                   <span>0 ha (Início)</span>
                   <span class="text-amber-700 font-bold">213 ha (Break-Even)</span>
-                  <span class="text-emerald-700 font-bold">9.150 ha (Safra Atual)</span>
+                  <span class="text-emerald-700 font-bold" id="kpiBreakEvenLabelSafra">0 ha (Safra Atual)</span>
                 </div>
               </div>
             </div>
@@ -4780,8 +4780,8 @@
                   <span class="text-slate-500">Controle de recebimentos e saldo devedor por O.S. sem cortes laterais:</span>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-3 font-sans">
-                  <span class="text-emerald-800 font-black text-xs px-3 py-1.5 rounded-xl bg-emerald-100/80 border border-emerald-300" id="kpiRecebidoTotalLabel">Recebido: R$ 10.900,00</span>
-                  <span class="text-amber-900 font-black text-xs px-3 py-1.5 rounded-xl bg-amber-100/80 border border-amber-300" id="kpiAbertoTotalLabel">Saldo Aberto: R$ 13.250,00</span>
+                  <span class="text-emerald-800 font-black text-xs px-3 py-1.5 rounded-xl bg-emerald-100/80 border border-emerald-300" id="kpiRecebidoTotalLabel">Recebido: R$ 0,00</span>
+                  <span class="text-amber-900 font-black text-xs px-3 py-1.5 rounded-xl bg-amber-100/80 border border-amber-300" id="kpiAbertoTotalLabel">Saldo Aberto: R$ 0,00</span>
                 </div>
               </div>
 
@@ -7971,12 +7971,7 @@
     // =========================================================================
     let ownerCropsChartInstance = null;
 
-    let fazendasGestao = [
-      { id: 1, nome: "Fazenda Rio Grande", produtor: "Grupo Horita", local: "Luís Eduardo Magalhães/BA", cultura: "Soja", hectares: 145.0, cor: "#009c3b" },
-      { id: 2, nome: "Fazenda Santa Helena", produtor: "SLC Agrícola", local: "Barreiras/BA", cultura: "Algodão", hectares: 110.0, cor: "#ffdf00" },
-      { id: 3, nome: "Fazenda Triângulo Dourado", produtor: "Agropecuária Diniz", local: "Tupaciguara/MG", cultura: "Milho Safrinha", hectares: 85.0, cor: "#0284c7" },
-      { id: 4, nome: "Fazenda Boa Esperança", produtor: "Família Schneider", local: "São Desidério/BA", cultura: "Soja", hectares: 62.0, cor: "#10b981" }
-    ];
+    let fazendasGestao = [];
 
     function carregarFazendasGestao() {
       try {
@@ -8005,18 +8000,26 @@
       if (!canvas) return;
 
       const isMobile = window.innerWidth < 768;
-      // No mobile e tablets, encurtar rótulo para caber na horizontal sem girar nem tocar margens
-      const labels = fazendasGestao.map(f => {
-        const clean = (f.nome || '').replace('Fazenda ', 'Faz. ').replace('Boa Esperança', 'B. Esperança').replace('Triângulo Dourado', 'Triâng. Dourado');
-        if (isMobile) {
-          const city = f.local ? f.local.split('/')[0] : '';
-          return city ? [clean, '(' + city + ')'] : clean;
-        }
-        return f.nome + (f.local ? ' (' + f.local.split('/')[0] + ')' : '');
-      });
+      let labels = [];
+      let data = [];
+      let colors = [];
 
-      const data = fazendasGestao.map(f => Number(f.hectares) || 0);
-      const colors = fazendasGestao.map((f, i) => f.cor || ['#009c3b', '#ffdf00', '#0284c7', '#10b981', '#f59e0b', '#8b5cf6'][i % 6]);
+      if (!fazendasGestao || fazendasGestao.length === 0) {
+        labels = ['Nenhuma fazenda cadastrada'];
+        data = [0];
+        colors = ['#cbd5e1'];
+      } else {
+        labels = fazendasGestao.map(f => {
+          const clean = (f.nome || '').replace('Fazenda ', 'Faz. ').replace('Boa Esperança', 'B. Esperança').replace('Triângulo Dourado', 'Triâng. Dourado');
+          if (isMobile) {
+            const city = f.local ? f.local.split('/')[0] : '';
+            return city ? [clean, '(' + city + ')'] : clean;
+          }
+          return f.nome + (f.local ? ' (' + f.local.split('/')[0] + ')' : '');
+        });
+        data = fazendasGestao.map(f => Number(f.hectares) || 0);
+        colors = fazendasGestao.map((f, i) => f.cor || ['#009c3b', '#ffdf00', '#0284c7', '#10b981', '#f59e0b', '#8b5cf6'][i % 6]);
+      }
 
       if (ownerCropsChartInstance) {
         ownerCropsChartInstance.data.labels = labels;
@@ -8274,11 +8277,14 @@
     // (Funções de O.S. e Kanban unificadas e migradas para o módulo operacional)
 
     // 21. Contas a Receber da Safra (Gestão de Invoices)
-    let contasReceber = [
-      { id: 'OS-2026-0042', cliente: 'Agropecuária Rio Formoso', area: '100 ha', cultura: 'Soja R3', total: 11000, recebido: 5500, aReceber: 5500, vencimento: '30/10/2026', status: 'Recebido 50%', pago: false },
-      { id: 'OS-2026-0043', cliente: 'João Carlos Silveira', area: '62 ha', cultura: 'Algodão', total: 7750, recebido: 5400, aReceber: 2350, vencimento: '05/11/2026', status: 'Recebido 70%', pago: false },
-      { id: 'OS-2026-0044', cliente: 'Fazenda Três Marias', area: '45 ha', cultura: 'Milho Safrinha', total: 5400, recebido: 0, aReceber: 5400, vencimento: '12/11/2026', status: 'Aberto', pago: false }
-    ];
+    let contasReceber = [];
+    try {
+      const savedContas = localStorage.getItem('pulveragro_contas_receber');
+      if (savedContas) {
+        const parsed = JSON.parse(savedContas);
+        if (Array.isArray(parsed)) contasReceber = parsed;
+      }
+    } catch (e) {}
 
     function markInvoicePaid(osId) {
       const inv = contasReceber.find(i => i.id === osId);
@@ -8313,7 +8319,10 @@
       const mobCont = document.getElementById('contasReceberMobileContainer');
       if (mobCont) {
         mobCont.innerHTML = '';
-        contasReceber.forEach(inv => {
+        if (contasReceber.length === 0) {
+          mobCont.innerHTML = '<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center text-xs text-slate-500 font-semibold">Nenhuma conta a receber cadastrada no momento.</div>';
+        } else {
+          contasReceber.forEach(inv => {
           const card = document.createElement('div');
           card.className = 'p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-2.5 text-left';
           const isPago = inv.pago || inv.aReceber === 0;
@@ -8360,13 +8369,17 @@
             </div>
           `;
           mobCont.appendChild(card);
-        });
+          });
+        }
       }
 
       const tbody = document.getElementById('contasReceberTableBody');
       if (tbody) {
         tbody.innerHTML = '';
-        contasReceber.forEach(inv => {
+        if (contasReceber.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="7" class="py-4 text-center text-slate-400 font-semibold">Nenhuma conta a receber lançada no momento.</td></tr>';
+        } else {
+          contasReceber.forEach(inv => {
           const tr = document.createElement('tr');
           tr.className = 'hover:bg-slate-50 transition-colors';
           const isPago = inv.pago || inv.aReceber === 0;
@@ -8387,7 +8400,8 @@
             </td>
           `;
           tbody.appendChild(tr);
-        });
+          });
+        }
       }
       try { if (window.lucide) lucide.createIcons(); } catch (e) {}
     }
@@ -8445,10 +8459,10 @@
           dataCustos = mesesInvertidos.map(m => Number(m.custos) || 0);
           dataLucro = mesesInvertidos.map(m => Number(m.lucro) || 0);
         } else {
-          chartLabels = ['Julho', 'Agosto', 'Setembro', 'Outubro'];
-          dataFat = [198000, 231000, 308000, 269500];
-          dataCustos = [75600, 88200, 117600, 102900];
-          dataLucro = [122400, 142800, 190400, 166600];
+          chartLabels = ['Safra 2025/26'];
+          dataFat = [0];
+          dataCustos = [0];
+          dataLucro = [0];
         }
 
         const isLine = (currentFinChartType === 'line');
@@ -8589,14 +8603,21 @@
       const ctxDg = document.getElementById('finCostDoughnutChart');
       if (ctxDg && window.Chart) {
         if (finChartDoughnutInstance) finChartDoughnutInstance.destroy();
+        const hasCostData = mesesSafra && mesesSafra.length > 0 && mesesSafra.some(m => Number(m.custos) > 0);
+        const dgLabels = hasCostData
+          ? ['Remuneração Piloto (R$ 15/ha)', 'Depreciação Bateria (R$ 12/ha)', 'Operacional/Diesel (R$ 10,50/ha)', 'Manutenção (R$ 4,50/ha)']
+          : ['Aguardando lançamentos de custos'];
+        const dgData = hasCostData ? [15, 12, 10.5, 4.5] : [1];
+        const dgColors = hasCostData ? ['#047857', '#0284c7', '#f59e0b', '#64748b'] : ['#e2e8f0'];
+
         finChartDoughnutInstance = new Chart(ctxDg, {
           type: 'doughnut',
           data: {
-            labels: ['Remuneração Piloto (R$ 15/ha)', 'Depreciação Bateria (R$ 12/ha)', 'Operacional/Diesel (R$ 12/ha)'],
+            labels: dgLabels,
             datasets: [{
-              data: [3105, 2484, 2484],
-              backgroundColor: ['#047857', '#0284c7', '#f59e0b'],
-              hoverOffset: 6,
+              data: dgData,
+              backgroundColor: dgColors,
+              hoverOffset: hasCostData ? 6 : 0,
               borderWidth: 2,
               borderColor: '#ffffff'
             }]
@@ -8650,13 +8671,7 @@
     // =========================================================
     // 1. GESTÃO INTERATIVA DO PIPELINE KANBAN DE O.S. (DIRETORIA)
     // =========================================================
-    let kanbanMissionsData = [
-      { id: 'OS-2026-0045', farm: 'Fazenda Alvorada', city: 'Cascavel/PR', culture: 'Soja R2', ha: 120, priceHa: 110, total: 13200, costComissao: 19, costBateria: 12, costDiesel: 10.5, costManut: 4.5, status: 'orcamento', pilot: 'A definir', drone: 'DJI T50', date: 'Janela 25/10' },
-      { id: 'OS-2026-0046', farm: 'Fazenda São José', city: 'Rio Verde/GO', culture: 'Algodão', ha: 80, priceHa: 120, total: 9600, costComissao: 20, costBateria: 12, costDiesel: 11.5, costManut: 4.5, status: 'agendado', pilot: 'Piloto Guilherme (DJI T50)', drone: 'DJI T50', date: 'Amanhã às 06:00' },
-      { id: 'OS-2026-0047', farm: 'Fazenda Boa Esperança', city: 'Tupaciguara/MG', culture: 'Milho Safrinha', ha: 62, priceHa: 110, total: 6820, costComissao: 18, costBateria: 12, costDiesel: 10.0, costManut: 4.5, status: 'campo', pilot: 'Piloto Guilherme (DJI T50)', drone: 'DJI T50', date: 'Em Voo 4/6' },
-      { id: 'OS-2026-0042', farm: 'Fazenda Santa Helena', city: 'Tupaciguara/MG', culture: 'Soja R3', ha: 100, priceHa: 110, total: 11000, costComissao: 19, costBateria: 12, costDiesel: 10.5, costManut: 4.5, status: 'concluido', pilot: 'Piloto Guilherme (DJI T40)', drone: 'DJI T40', date: '20/10/2026' },
-      { id: 'OS-2026-0044', farm: 'Grupo Santa Maria', city: 'Lucas do Rio Verde/MT', culture: 'Soja Pré-Colheita', ha: 45, priceHa: 120, total: 5400, costComissao: 22, costBateria: 12, costDiesel: 11.0, costManut: 5.0, status: 'faturado', pilot: 'Piloto Osmar (DJI T40)', drone: 'DJI T40', date: '18/10/2026' }
-    ];
+    let kanbanMissionsData = [];
 
     try {
       const savedKanban = localStorage.getItem('pulveragro_kanban_missions');
@@ -8674,6 +8689,9 @@
       if (!tbody) return;
 
       tbody.innerHTML = '';
+      if (!kanbanMissionsData || kanbanMissionsData.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="11" class="p-4 text-center text-slate-400 font-semibold">Nenhuma missão/O.S. registrada no momento.</td></tr>';
+      }
 
       let totHa = 0;
       let totReceita = 0;
@@ -10940,31 +10958,32 @@
       manutencao: 4.50
     };
 
-    // Dados iniciais dos meses da safra
-    let mesesSafra = [
-      { id: 1, mes: "Outubro / 2026", hectares: 2450, preco: 110, faturamento: 269500, custos: 102900, lucro: 166600, status: "Concluído & Auditado" },
-      { id: 2, mes: "Setembro / 2026", hectares: 2800, preco: 110, faturamento: 308000, custos: 117600, lucro: 190400, status: "Concluído & Auditado" },
-      { id: 3, mes: "Agosto / 2026", hectares: 2100, preco: 110, faturamento: 231000, custos: 88200, lucro: 142800, status: "Concluído & Auditado" },
-      { id: 4, mes: "Julho / 2026", hectares: 1800, preco: 110, faturamento: 198000, custos: 75600, lucro: 122400, status: "Concluído & Auditado" }
-    ];
+    // Dados iniciais dos meses da safra (zerado para início de safra real)
+    let mesesSafra = [];
 
     function carregarDadosFinanceiros() {
       try {
+        // Limpeza de cache legado para inicializar o painel 100% zerado
+        if (localStorage.getItem('pulveragro_zeroed_safra_v1') !== 'true') {
+          localStorage.removeItem('pulveragro_meses_safra');
+          localStorage.removeItem('pulveragro_fazendas_gestao');
+          localStorage.removeItem('pulveragro_kanban_missions');
+          localStorage.removeItem('pulveragro_contas_receber');
+          localStorage.setItem('pulveragro_zeroed_safra_v1', 'true');
+          mesesSafra = [];
+          fazendasGestao = [];
+          contasReceber = [];
+          kanbanMissionsData = [];
+        }
+
         const savedDre = localStorage.getItem('pulveragro_custom_dre');
         if (savedDre) dreConfig = JSON.parse(savedDre);
 
         const savedMeses = localStorage.getItem('pulveragro_meses_safra');
         if (savedMeses) {
           const parsed = JSON.parse(savedMeses);
-          if (Array.isArray(parsed) && parsed.length > 0) {
+          if (Array.isArray(parsed)) {
             mesesSafra = parsed;
-          } else {
-            mesesSafra = [
-              { id: 1, mes: "Outubro / 2026", hectares: 2450, preco: 110, faturamento: 269500, custos: 102900, lucro: 166600, status: "Concluído & Auditado" },
-              { id: 2, mes: "Setembro / 2026", hectares: 2800, preco: 110, faturamento: 308000, custos: 117600, lucro: 190400, status: "Concluído & Auditado" },
-              { id: 3, mes: "Agosto / 2026", hectares: 2100, preco: 110, faturamento: 231000, custos: 88200, lucro: 142800, status: "Concluído & Auditado" },
-              { id: 4, mes: "Julho / 2026", hectares: 1800, preco: 110, faturamento: 198000, custos: 75600, lucro: 122400, status: "Concluído & Auditado" }
-            ];
           }
         }
       } catch (e) {
@@ -10973,7 +10992,7 @@
       atualizarExibicaoDre();
       renderizarTabelaMensal();
       if (typeof renderContasReceber === 'function') renderContasReceber();
-      if (typeof updateDreSimulator === 'function') updateDreSimulator(2500);
+      if (typeof updateDreSimulator === 'function') updateDreSimulator(0);
     }
 
     function atualizarExibicaoDre() {
@@ -11228,6 +11247,35 @@
       if (elDashFat) elDashFat.textContent = 'R$ ' + totFat.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
       if (elDashHa) elDashHa.textContent = totHa.toLocaleString('pt-BR') + ' ha executados';
       if (elDashDesp) elDashDesp.textContent = 'R$ ' + totCusto.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+
+      // Atualizar Indicadores de Ponto de Equilíbrio (Break-Even)
+      const elBeExec = document.getElementById('kpiBreakEvenExecutado');
+      const elBeMargemSeg = document.getElementById('kpiBreakEvenMargemSeg');
+      const elBeSub = document.getElementById('kpiBreakEvenSub');
+      const elBeStatus = document.getElementById('kpiBreakEvenStatus');
+      const elBeLabelSafra = document.getElementById('kpiBreakEvenLabelSafra');
+      const beHectares = 213;
+
+      if (elBeExec) elBeExec.textContent = totHa.toLocaleString('pt-BR') + ' ha';
+      if (elBeLabelSafra) elBeLabelSafra.textContent = totHa.toLocaleString('pt-BR') + ' ha (Safra Atual)';
+
+      if (totHa >= beHectares) {
+        const seg = totHa - beHectares;
+        const segPct = totHa > 0 ? ((seg / totHa) * 100).toFixed(1) : '0.0';
+        if (elBeMargemSeg) elBeMargemSeg.textContent = '+ ' + seg.toLocaleString('pt-BR') + ' ha';
+        if (elBeSub) elBeSub.textContent = segPct + '% da safra em Lucro Líquido Puro';
+        if (elBeStatus) {
+          elBeStatus.textContent = '✓ Ponto de Equilíbrio Superado';
+          elBeStatus.className = 'text-[10px] text-emerald-600 font-bold block';
+        }
+      } else {
+        if (elBeMargemSeg) elBeMargemSeg.textContent = '0 ha';
+        if (elBeSub) elBeSub.textContent = 'Ponto de equilíbrio: ' + beHectares + ' ha';
+        if (elBeStatus) {
+          elBeStatus.textContent = totHa === 0 ? 'Aguardando voos da safra' : (beHectares - totHa) + ' ha para o ponto de equilíbrio';
+          elBeStatus.className = 'text-[10px] text-slate-500 font-bold block';
+        }
+      }
       if (elDashCusto) elDashCusto.textContent = 'Custo médio: R$ ' + custoMedioHa.toFixed(2).replace('.', ',') + ' / ha';
       if (elDashResult) elDashResult.textContent = 'R$ ' + totLucro.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
       if (elDashMargem) elDashMargem.textContent = 'Margem Líquida: ' + margemLiquidaPerc + '%';
